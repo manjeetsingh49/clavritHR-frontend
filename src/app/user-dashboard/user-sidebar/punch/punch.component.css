@@ -1,0 +1,14 @@
+
+table {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 17px;
+    font-weight: bold;
+    color: white;
+
+}
+
+td, th {
+    padding: 1px;
+}

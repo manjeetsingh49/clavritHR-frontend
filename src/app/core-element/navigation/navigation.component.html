@@ -18,8 +18,9 @@
             
             <li><a routerLink="" routerLinkActive="active">Home</a></li>
             <li><a href="#" >about us</a></li>
-            <li><a routerLink="login" routerLinkActive="active">Login</a></li>
-
+            <li *ngIf="!this.authService.isLogin"><a routerLink="login" routerLinkActive="active">Login</a></li>
+            <li *ngIf="this.authService.isLogin"><a class="btn" (click)="logout()" >Logout</a></li>
+           
             
         </ul>
         <!--  notification end -->

@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { CoreElementModule } from './core-element/core-element.module';
 import { LoginModule } from './login/login.module';
 import { HttpClientModule } from '@angular/common/http';
-
+import { UserDashboardModule } from './user-dashboard/user-dashboard.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     LoginModule,
     CoreElementModule,
-    HttpClientModule
+    HttpClientModule,
+    UserDashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
