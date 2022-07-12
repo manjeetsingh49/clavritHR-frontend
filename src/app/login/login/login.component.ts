@@ -32,8 +32,7 @@ export class LoginComponent implements OnInit {
 
       console.log("code : " + code)
       if (code == 200) {
-        this.authService.saveData('token', 'password');
-        this.authService.saveData(emailId, "email")
+        this.authService.saveData(this.authService.TOKEN_KEY, this.authService.TOKEN_VALUE);
         this.route.navigate(["/user-dashboard"]);
       } else {
         this.msg = "Invalid credentials, Please enter correct";

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { UserBodyComponent } from './user-body/user-body.component';
 import { UserSidebarComponent } from './user-sidebar/user-sidebar.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
-import { PunchComponent } from './user-sidebar/punch/punch.component';
+import { PunchComponent } from './punch/punch.component';
 
 
 @NgModule({

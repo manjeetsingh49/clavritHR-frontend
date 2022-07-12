@@ -11,7 +11,7 @@ export class UserDashboardComponent implements OnInit {
   constructor( private authService: AuthenticationService, private route: Router) { }
 
   ngOnInit(): void {
-    if(this.authService.getData("tokan")== "password"){
+    if(this.authService.getData(this.authService.TOKEN_KEY)==this.authService.TOKEN_VALUE){
       
     }else{
       this.route.navigate([""]);
