@@ -1,5 +1,4 @@
 <div>
-  <form class="">
     <h3>Request time off</h3>
     <br>
     
@@ -19,8 +18,13 @@
     
     <p> <span>Amount*</span> <span> {{diffDays}}</span> <span> Day</span></p>
     
-    <p>Note</p>
-    <textarea name="message" rows="" cols="" #message></textarea>
-  </form>
-  <button type="button" class="btn btn-lg btn-block btn-success" (click)="sendRequest()">Send Request</button>
+    Note
+    <p>
+    <textarea name="message" id="message" rows="3" cols="" style="width: 100%;"  [(ngModel)]="message"></textarea>
+    </p>
+    <p style="float: right;">
+      <button type="button" class="btn btn-success float-end" (click)="sendRequest()">Send Request</button>
+      <span style="margin-left: 20px;"></span>
+      <button type="button" class="btn btn-default float-end" data-dismiss="modal" (click)="clear()">Cancel</button>
+    </p>
 </div>
