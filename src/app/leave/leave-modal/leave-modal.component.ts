@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LeaveService } from 'src/app/service/leave.service';
 
 @Component({
-  selector: 'app-leave',
+  selector: 'leave-modal',
   templateUrl: './leave-modal.component.html',
   styleUrls: ['./leave-modal.component.css'],
   providers: [LeaveService]
