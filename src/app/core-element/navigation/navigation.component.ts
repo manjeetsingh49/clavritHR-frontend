@@ -9,16 +9,19 @@ import { Router } from '@angular/router';
 export class NavigationComponent implements OnInit {
 
 
-  
+
   constructor(public authService: AuthenticationService, private route: Router) { }
 
   ngOnInit(): void {
   }
 
-  logout(){
+  logout() {
     this.authService.removeData("token");
     this.route.navigate(["/login"]);
 
   }
 
 }
+
+
+

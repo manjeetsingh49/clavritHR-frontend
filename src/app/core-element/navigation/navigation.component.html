@@ -2,26 +2,27 @@
 <header class="header clearfix">
     <!--logo start-->
     <div class="brand">
-    
+
         <a href="index.html" class="logo">
-            <img src="/assets/images/logo.png" width="130" alt="logo">
+            <img style="margin-left: 19px; margin-top: -5px;" src="/assets/images/logo.png" width="130" alt="logo">
         </a>
         <!-- <div class="sidebar-toggle-box">
             <div class="fa fa-bars"></div>
         </div> -->
     </div>
     <!--logo end-->
-    
+
     <div class="horizontal-menu navbar-collapse collapse">
         <!--  notification start -->
         <ul class="nav navbar-nav">
-            
-            <li><a routerLink="" routerLinkActive="active">Home</a></li>
-            <li><a href="#" >about us</a></li>
+
+            <li *ngIf="!this.authService.isLogin"><a routerLink="" routerLinkActive="active">Home</a></li>
+            <li  *ngIf="this.authService.isLogin"><a class="btn" routerLink="user-dashboard" routerLinkActive="active">Home</a></li>
+            <li><a href="#">about us</a></li>
             <li *ngIf="!this.authService.isLogin"><a routerLink="login" routerLinkActive="active">Login</a></li>
-            <li *ngIf="this.authService.isLogin"><a class="btn" (click)="logout()" >Logout</a></li>
-           
-            
+            <li *ngIf="this.authService.isLogin"><a class="btn" (click)="logout()">Logout</a></li>
+
+
         </ul>
         <!--  notification end -->
     </div>
@@ -53,4 +54,4 @@
         </ul>-->
         <!--search & user info end-->
     </div>
-</header>    
+</header>

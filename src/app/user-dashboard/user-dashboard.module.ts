@@ -6,6 +6,7 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
 import { PunchComponent } from './punch/punch.component';
 
 
+
 @NgModule({
   declarations: [
     UserBodyComponent,
@@ -15,13 +16,15 @@ import { PunchComponent } from './punch/punch.component';
   
   ],
   imports: [
-    CommonModule
+    CommonModule,
+   
+
   ],
   exports: [
     UserBodyComponent,
     UserSidebarComponent,
     UserDashboardComponent,
-    PunchComponent
+    PunchComponent,
   ]
 })
 export class UserDashboardModule { }

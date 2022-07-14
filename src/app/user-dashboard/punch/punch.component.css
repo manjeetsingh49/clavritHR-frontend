@@ -1,4 +1,3 @@
-
 table {
     width: 100%;
     text-align: center;
@@ -9,6 +8,22 @@ table {
 
 }
 
-td, th {
+td,
+th {
     padding: 1px;
+}
+
+.btn-success {
+    background-color: #24aee4;
+    border-color: #24aee4;
+}
+
+a {
+    color: white;
+}
+
+p {
+    margin: 6px 10px;
+    font-size: 15px;
+    color: white;
 }
