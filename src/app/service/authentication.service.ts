@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthenticationService {
-  TOKEN_KEY: string = "auth-token";
+  TOKEN_KEY: string = "token";
   TOKEN_VALUE: string = "password";
   isLogin:boolean = false;
   constructor() { }
