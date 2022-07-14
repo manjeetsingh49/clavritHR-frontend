@@ -8,10 +8,12 @@ import { LoginModule } from './login/login.module';
 import { HttpClientModule } from '@angular/common/http';
 import { UserDashboardModule } from './user-dashboard/user-dashboard.module';
 import { LeaveModule } from './leave/leave.module';
+import { PeopleComponent } from './people/people.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PeopleComponent
   ],
   imports: [
     BrowserModule,
