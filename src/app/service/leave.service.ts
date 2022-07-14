@@ -7,12 +7,12 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class LoginService {
+export class LeaveService {
 
   constructor(private http: HttpClient) { }
 
-  public login(emailId: string, password: string): Observable<any> {
-    const body = { 'emailId': emailId, 'password': password };
-    return this.http.post<any>('http://localhost:8080/login', body);
+  public sendLeaveRequest(body: any): Observable<any> {
+   
+    return this.http.post<any>('http://localhost:8080/leave-request', body);
   }
 }

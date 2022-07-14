@@ -4,24 +4,27 @@ import { UserBodyComponent } from './user-body/user-body.component';
 import { UserSidebarComponent } from './user-sidebar/user-sidebar.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { PunchComponent } from './punch/punch.component';
-
+import { LeaveComponent } from '../leave/leave/leave.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     UserBodyComponent,
     UserSidebarComponent,
     UserDashboardComponent,
-    PunchComponent
-  
+    PunchComponent,
+    LeaveComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports: [
     UserBodyComponent,
     UserSidebarComponent,
     UserDashboardComponent,
-    PunchComponent
+    PunchComponent,
+    LeaveComponent
   ]
 })
 export class UserDashboardModule { }
