@@ -6,6 +6,7 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
 import { PunchComponent } from './punch/punch.component';
 import { LeaveComponent } from '../leave/leave/leave.component';
 import { FormsModule } from '@angular/forms';
+import { LeaveModalComponent } from '../leave/leave-modal/leave-modal.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { FormsModule } from '@angular/forms';
     UserSidebarComponent,
     UserDashboardComponent,
     PunchComponent,
-    LeaveComponent
+    LeaveComponent,
+    LeaveModalComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +26,8 @@ import { FormsModule } from '@angular/forms';
     UserSidebarComponent,
     UserDashboardComponent,
     PunchComponent,
-    LeaveComponent
+    LeaveComponent,
+    LeaveModalComponent
   ]
 })
 export class UserDashboardModule { }
