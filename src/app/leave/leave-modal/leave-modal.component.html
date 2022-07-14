@@ -1,0 +1,26 @@
+<div>
+  <form class="">
+    <h3>Request time off</h3>
+    <br>
+    
+        <label for="From">From*:</label>
+        <input class="form-control" type="date" id="from" name="from"  [(ngModel)]="from" (input)="dateDiff()">
+        <label for=" To">To*:</label>
+        <input class="form-control" type="date" id="to" name="To"  [(ngModel)]="to" (input)="dateDiff()">
+        {{dtErr}}
+    <br>
+    
+    
+    <label for="Time of Type*">Time of type*:</label><br>
+    <select [(ngModel)]="seletecLeaveType"  class="form-control" name="timeOfType" id="timeOfType">
+      <option  selected disabled hidden>{{seletecLeaveType}}</option>
+      <option *ngFor="let leaves of leaveType" value="{{leaves.value}}">{{leaves.display}}</option>
+    </select> <br>
+    
+    <p> <span>Amount*</span> <span> {{diffDays}}</span> <span> Day</span></p>
+    
+    <p>Note</p>
+    <textarea name="message" rows="" cols="" #message></textarea>
+  </form>
+  <button type="button" class="btn btn-lg btn-block btn-success" (click)="sendRequest()">Send Request</button>
+</div>
