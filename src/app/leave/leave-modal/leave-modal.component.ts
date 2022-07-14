@@ -15,13 +15,22 @@ export class LeaveModalComponent implements OnInit {
   public from: string = "";
   public to: string = "";
   public dtErr: string = "";
+  public leaveType : any = [
+    {"value":"sickLeave", "display" : "Sick Leave"},
+    {"value":"vacation", "display" : "Vacation"},
+    {"value":"covid", "display" : "Covid"},
+  ]
+  public seletecLeaveType: string = "Leave Type"
+
   constructor(private leaveService: LeaveService) { }
   ngOnInit(): void {
   }
 
-  sendRequest(message: string, hour: string) {
-    const body = { 'message': message, 'hour': hour };
-    console.log("message: " + message + ", hour: " + hour);
+  sendRequest() {
+    const body = {
+       'days': this.diffDays,
+       'leaveType' : this.seletecLeaveType
+      };
     var code;
     this.response = this.leaveService.sendLeaveRequest(body).subscribe(resp => {
       console.log(resp);

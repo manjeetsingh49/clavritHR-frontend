@@ -8,7 +8,6 @@ import { LeaveService } from 'src/app/service/leave.service';
   providers: [LeaveService]
 })
 export class LeaveComponent implements OnInit {
-
   constructor() { }
   ngOnInit(): void {
   }

@@ -12,9 +12,9 @@
     
     
     <label for="Time of Type*">Time of type*:</label><br>
-    <select class="form-control" name="timeOfType" id="timeOfType">
-      <option value="sickLeave">sick leave</option>
-      <option value="vacation">Vacation</option>
+    <select [(ngModel)]="seletecLeaveType"  class="form-control" name="timeOfType" id="timeOfType">
+      <option  selected disabled hidden>{{seletecLeaveType}}</option>
+      <option *ngFor="let leaves of leaveType" value="{{leaves.value}}">{{leaves.display}}</option>
     </select> <br>
     
     <p> <span>Amount*</span> <span> {{diffDays}}</span> <span> Day</span></p>
@@ -22,5 +22,5 @@
     <p>Note</p>
     <textarea name="message" rows="" cols="" #message></textarea>
   </form>
-  <button type="button" class="btn btn-lg btn-login btn-block">Send Request</button>
+  <button type="button" class="btn btn-lg btn-block btn-success" (click)="sendRequest()">Send Request</button>
 </div>
