@@ -11,7 +11,10 @@ export class LeaveComponent implements OnInit {
   response: any;
   msg: string = "";
   closeResult = '';
-  public inputValue:String = "hello";
+  public diffDays: any;
+  public from: string = "";
+  public to: string = "";
+  public dtErr: string = "";
   constructor(private leaveService: LeaveService) { }
   ngOnInit(): void {
   }
@@ -26,6 +29,17 @@ export class LeaveComponent implements OnInit {
       this.response = resp;
       console.log("code : " + code)
     });
+  }
+
+  public dateDiff() {
+    if(this.to && this.from) {
+      let toDt = new Date(this.to);
+      let frDt = new Date(this.from);
+      this.diffDays = toDt.getDate() - frDt.getDate();
+      this.dtErr = "";
+    } else {
+      this.dtErr = "Please select both the dates";
+    }
   }
 }
 
