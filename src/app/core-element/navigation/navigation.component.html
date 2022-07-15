@@ -18,7 +18,7 @@
 
             <li *ngIf="!this.authService.isLogin"><a routerLink="" routerLinkActive="active">Home</a></li>
             <li  *ngIf="this.authService.isLogin"><a class="btn" routerLink="user-dashboard" routerLinkActive="active">Home</a></li>
-            <li><a href="#">about us</a></li>
+            <li><a class="btn" routerLink="about" routerLinkActive="active">about us</a></li>
             <li *ngIf="!this.authService.isLogin"><a routerLink="login" routerLinkActive="active">Login</a></li>
             <li *ngIf="this.authService.isLogin"><a class="btn" (click)="logout()" >Logout</a></li>
             <li><a mat-button routerLink="people" routerLinkActive="active">People</a></li>
