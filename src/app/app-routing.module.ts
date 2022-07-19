@@ -5,12 +5,9 @@ import { LeaveComponent } from './leave/leave/leave.component';
 import { LoginComponent } from './login/login/login.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard/user-dashboard.component';
 import { AboutComponent } from './core-element/about/about.component';
-<<<<<<< Updated upstream
 import { PeopleComponent } from './core-element/people/people.component';
-=======
-import { PeopleComponent } from './people/people.component';
-import { MyinfoComponent } from './myinfo/myinfo.component';
->>>>>>> Stashed changes
+import { MyinfoComponent } from './core-element/myinfo/myinfo.component'; 
+
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'hrms', component: LoginComponent },

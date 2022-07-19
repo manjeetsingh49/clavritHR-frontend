@@ -6,6 +6,7 @@ import { AppRoutingModule } from '../app-routing.module';
 import { AboutComponent } from './about/about.component';
 import { UserDashboardModule } from '../user-dashboard/user-dashboard.module';
 import { PeopleComponent } from './people/people.component';
+import { MyinfoComponent } from './myinfo/myinfo.component';
 
 
 @NgModule({
@@ -13,8 +14,8 @@ import { PeopleComponent } from './people/people.component';
     NavigationComponent,
     HomeComponent,
     AboutComponent,
-    PeopleComponent
-
+    PeopleComponent,
+    MyinfoComponent
   ],
   imports: [
     CommonModule,
@@ -26,7 +27,8 @@ import { PeopleComponent } from './people/people.component';
     NavigationComponent,
     HomeComponent,
     AboutComponent,
-    PeopleComponent
+    PeopleComponent,
+    MyinfoComponent
   ]
 })
 export class CoreElementModule { }
