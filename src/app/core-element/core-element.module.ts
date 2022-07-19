@@ -7,7 +7,7 @@ import { AboutComponent } from './about/about.component';
 import { UserDashboardModule } from '../user-dashboard/user-dashboard.module';
 import { PeopleComponent } from './people/people.component';
 import { MyinfoComponent } from './myinfo/myinfo.component';
-
+import { LoginModule } from '../login/login.module';
 
 @NgModule({
   declarations: [
@@ -15,12 +15,15 @@ import { MyinfoComponent } from './myinfo/myinfo.component';
     HomeComponent,
     AboutComponent,
     PeopleComponent,
-    MyinfoComponent
+    MyinfoComponent,
+  
   ],
   imports: [
     CommonModule,
     AppRoutingModule,
-    UserDashboardModule
+    UserDashboardModule,
+    LoginModule
+    
 
   ],
   exports: [
