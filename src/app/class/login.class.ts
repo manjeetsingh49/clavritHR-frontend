@@ -1,19 +1,19 @@
 export class LoginClass {
-    private emailId: string;
+    private id: string;
     private password: string;
 
-    constructor(emailId: string, password: string) {
-        this.emailId = emailId;
+    constructor(id: string, password: string) {
+        this.id = id;
         this.password = password;
     }
-    getEmailId(): string {
-        return this.emailId;
+    getId(): string {
+        return this.id;
     }
     getPassword(): string {
         return this.password;
     }
-    setEmailId(emailId: string): void {
-        this.emailId = emailId;
+   setId(id: string): void {
+        this.id = id;
     }
     setPassword(password: string): void {
         this.password = password;
