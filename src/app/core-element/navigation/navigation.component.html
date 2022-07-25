@@ -16,6 +16,7 @@
   </div>
   <!--logo end-->
 
+<<<<<<< HEAD
   <div class="horizontal-menu navbar-collapse collapse">
     <!--  notification start -->
     <ul class="nav navbar-nav">
@@ -47,12 +48,27 @@
   </div>
   <div class="top-nav clearfix">
     <!--search & user info start
+=======
+    <div class="horizontal-menu navbar-collapse collapse">
+        <!--  notification start -->
+        <ul class="nav navbar-nav">
+
+            <li  *ngIf="this.authService.isLogin"><a class="btn" routerLink="user-dashboard" routerLinkActive="active">Home</a></li>
+            <li *ngIf="this.authService.isLogin"><a class="btn" routerLink="about" routerLinkActive="active">about us</a></li>
+            <li *ngIf="this.authService.isLogin"><a mat-button routerLink="people" routerLinkActive="active">People</a></li>
+            <li *ngIf="this.authService.isLogin" ><a mat-button routerLink="myinfo" routerLinkActive="active">My Info</a></li>
+
+
+        </ul>
+        <!--  notification end -->
+    </div>
+    <div class="top-nav clearfix">
+        <!--search & user info start -->
+>>>>>>> b29dc75f24bd4d0af1ba18d749c4881d19046137
         <ul class="nav pull-right top-menu">
-            <li>
-                <input type="text" class="form-control search" placeholder=" Search">
-            </li>
+            <li *ngIf="this.authService.isLogin" ><a class="btn" (click)="logout()"  >Logout</a></li>
     
-            <li class="dropdown">
+          <!-- <li class="dropdown">
                 <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                     <img alt="" src="assets/images/avatar1_small.jpg">
                     <span class="username">John Doe</span>
@@ -69,8 +85,16 @@
                 <div class="toggle-right-box">
                     <div class="fa fa-bars"></div>
                 </div>
+<<<<<<< HEAD
             </li> 
         </ul>-->
     <!--search & user info end-->
   </div>
 </header>
+=======
+            </li> -->
+        </ul>
+        <!--search & user info end-->
+    </div>
+</header>
+>>>>>>> b29dc75f24bd4d0af1ba18d749c4881d19046137

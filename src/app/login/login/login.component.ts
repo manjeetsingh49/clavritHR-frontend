@@ -23,10 +23,10 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  login(emailId: string, password: string) {
+  login(id: string, password: string) {
     var code;
-    var login = new LoginClass(emailId, password);
-    console.log("emailId: " + emailId + ", password: " + password);
+    var login = new LoginClass(id, password);
+    console.log("id: " + id + ", password: " + password);
     this.response = this.loginService.login(login).subscribe(resp => {
       console.log(resp);
       code = resp.code;

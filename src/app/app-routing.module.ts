@@ -10,7 +10,7 @@ import { MyinfoComponent } from './core-element/myinfo/myinfo.component';
 import { HiringComponent } from './core-element/hiring/hiring.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: LoginComponent },
   { path: 'hrms', component: LoginComponent },
   { path: 'leave', component: LeaveComponent },
   { path: 'user-dashboard', component: UserDashboardComponent },
