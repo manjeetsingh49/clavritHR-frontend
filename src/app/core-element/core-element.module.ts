@@ -7,7 +7,7 @@ import { AboutComponent } from './about/about.component';
 import { UserDashboardModule } from '../user-dashboard/user-dashboard.module';
 import { PeopleComponent } from './people/people.component';
 import { MyinfoComponent } from './myinfo/myinfo.component';
-
+import { HiringComponent } from './hiring/hiring.component';
 
 @NgModule({
   declarations: [
@@ -15,20 +15,17 @@ import { MyinfoComponent } from './myinfo/myinfo.component';
     HomeComponent,
     AboutComponent,
     PeopleComponent,
-    MyinfoComponent
+    MyinfoComponent,
+    HiringComponent,
   ],
-  imports: [
-    CommonModule,
-    AppRoutingModule,
-    UserDashboardModule
-
-  ],
+  imports: [CommonModule, AppRoutingModule, UserDashboardModule],
   exports: [
     NavigationComponent,
     HomeComponent,
     AboutComponent,
     PeopleComponent,
-    MyinfoComponent
-  ]
+    MyinfoComponent,
+    HiringComponent,
+  ],
 })
-export class CoreElementModule { }
+export class CoreElementModule {}

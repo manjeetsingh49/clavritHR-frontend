@@ -6,7 +6,8 @@ import { LoginComponent } from './login/login/login.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard/user-dashboard.component';
 import { AboutComponent } from './core-element/about/about.component';
 import { PeopleComponent } from './core-element/people/people.component';
-import { MyinfoComponent } from './core-element/myinfo/myinfo.component'; 
+import { MyinfoComponent } from './core-element/myinfo/myinfo.component';
+import { HiringComponent } from './core-element/hiring/hiring.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -14,12 +15,13 @@ const routes: Routes = [
   { path: 'leave', component: LeaveComponent },
   { path: 'user-dashboard', component: UserDashboardComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'people', component:PeopleComponent},
-  { path: 'myinfo', component:MyinfoComponent}
+  { path: 'people', component: PeopleComponent },
+  { path: 'myinfo', component: MyinfoComponent },
+  { path: 'hiring', component: HiringComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

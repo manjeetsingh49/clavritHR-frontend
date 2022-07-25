@@ -1,31 +1,42 @@
 <app-user-sidebar></app-user-sidebar>
 <section id="main-content">
-  <section >
-
-<h1>Clavrit People</h1>
-<div style="padding: 25px;">
-    <table class="table table-bordered table-striped">
-      <thead style="background-color:  #24aee4;">
-      <tr style="color: white;">
-        <th>Name</th>
-        <th>Address</th>
-        <th>Emp-mail</th>
-        <th>Phone</th>
-        <th>Date Of Birth</th>
-        <th>Joinig Date</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let people of peoples">
-        <td><span>{{people.name}}</span></td>
-        <td><span>{{people.address}}</span></td>
-        <td><span>{{people.emp_mail}}</span></td>
-        <td><span>{{people.phone_num}}</span></td>
-        <td><span>{{people.dob}}</span></td>
-        <td><span>{{people.joining_date}}</span></td>
-      </tr>
-      </tbody>
-    </table>
-  </div>
+  <section>
+    <h1>Clavrit People</h1>
+    <div style="padding: 25px">
+      <table class="table table-bordered table-striped">
+        <thead style="background-color: #24aee4">
+          <tr style="color: white">
+            <th>Name</th>
+            <th>Address</th>
+            <th>Emp-mail</th>
+            <th>Phone</th>
+            <th>Date Of Birth</th>
+            <th>Joinig Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let people of peoples">
+            <td>
+              <span>{{ people.name }}</span>
+            </td>
+            <td>
+              <span>{{ people.address }}</span>
+            </td>
+            <td>
+              <span>{{ people.emp_mail }}</span>
+            </td>
+            <td>
+              <span>{{ people.phone_num }}</span>
+            </td>
+            <td>
+              <span>{{ people.dob }}</span>
+            </td>
+            <td>
+              <span>{{ people.joining_date }}</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </section>
 </section>
