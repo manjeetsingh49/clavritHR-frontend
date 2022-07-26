@@ -9,6 +9,7 @@ import { PeopleComponent } from './core-element/people/people.component';
 import { MyinfoComponent } from './core-element/myinfo/myinfo.component';
 import { HiringComponent } from './core-element/hiring/hiring.component';
 
+import { EmployeeprofileModalComponent } from './employeeprofile-modal/employeeprofile-modal.component';
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'hrms', component: LoginComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'people', component: PeopleComponent },
   { path: 'myinfo', component: MyinfoComponent },
   { path: 'hiring', component: HiringComponent },
+  { path : 'employee-profile', component:EmployeeprofileModalComponent},
 ];
 
 @NgModule({

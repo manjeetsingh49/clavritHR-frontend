@@ -7,11 +7,13 @@ import { AboutComponent } from './about/about.component';
 import { UserDashboardModule } from '../user-dashboard/user-dashboard.module';
 import { PeopleComponent } from './people/people.component';
 import { MyinfoComponent } from './myinfo/myinfo.component';
-<<<<<<< HEAD
+
 import { HiringComponent } from './hiring/hiring.component';
-=======
 import { LoginModule } from '../login/login.module';
->>>>>>> b29dc75f24bd4d0af1ba18d749c4881d19046137
+
+import { EmployeeprofileModalComponent } from '../employeeprofile-modal/employeeprofile-modal.component';
+import {  FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -20,21 +22,16 @@ import { LoginModule } from '../login/login.module';
     AboutComponent,
     PeopleComponent,
     MyinfoComponent,
-<<<<<<< HEAD
     HiringComponent,
-=======
-  
+    EmployeeprofileModalComponent
   ],
   imports: [
     CommonModule,
     AppRoutingModule,
     UserDashboardModule,
-    LoginModule
-    
-
->>>>>>> b29dc75f24bd4d0af1ba18d749c4881d19046137
+    LoginModule,
+    FormsModule
   ],
-  imports: [CommonModule, AppRoutingModule, UserDashboardModule],
   exports: [
     NavigationComponent,
     HomeComponent,
@@ -42,6 +39,8 @@ import { LoginModule } from '../login/login.module';
     PeopleComponent,
     MyinfoComponent,
     HiringComponent,
+    EmployeeprofileModalComponent,
   ],
+
 })
 export class CoreElementModule {}

@@ -34,13 +34,13 @@ export class LeaveModalComponent implements OnInit {
      return;
     }
 
-    const body = {
+    var leaveReqDto:any = {
        'days': this.diffDays,
        'leaveType' : this.seletecLeaveType,
        'message': this.message
       };  
     var code;
-    this.response = this.leaveService.sendLeaveRequest(body).subscribe(resp => {
+    this.response = this.leaveService.sendLeaveRequest(leaveReqDto).subscribe(resp => {
       console.log(resp);
       code = resp.code;
       this.response = resp;
