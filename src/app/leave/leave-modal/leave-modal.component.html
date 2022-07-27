@@ -15,8 +15,9 @@
       <option  selected disabled hidden>{{seletecLeaveType}}</option>
       <option *ngFor="let leaves of leaveType" value="{{leaves.value}}">{{leaves.display}}</option>
     </select> <br>
-    
-    <p> <span>Total Days*</span> <span> {{diffDays}}</span> <span *ngif="diffDays>=0">Day</span></p>
+    <p> <span>Total Days*</span> <span> {{diffDays}}</span> <span *ngIf="diffDays>=0">Day</span></p>
+
+
     
     Note
     <p>
