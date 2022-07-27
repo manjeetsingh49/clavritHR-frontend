@@ -22,11 +22,7 @@ import { DatePipe } from '@angular/common';
     CoreElementModule,
     HttpClientModule,
     UserDashboardModule,
-<<<<<<< Updated upstream
     FormsModule
-=======
-    FormsModule,
->>>>>>> Stashed changes
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]

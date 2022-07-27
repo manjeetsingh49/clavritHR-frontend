@@ -15,6 +15,7 @@ export class PunchComponent implements OnInit {
   constructor(private punchService: PunchService) {
   }
 
+  
 
   punchInTime: any;
   punchOutTime: any;

@@ -8,17 +8,6 @@
     </thead>
     <tbody>
         <tr>
-<<<<<<< Updated upstream
-            <td>10:10 AM</td>
-            <td>00:00 PM</td>
-        </tr>
-        <tr>
-            <td colspan="2" style="padding: 8px;">
-                <button type="button" class="btn btn-success btn-block">Punch-out</button>
-            </td>
-            <td>
-
-=======
             <td>
                 <form>
                     <label style="font-size: 12px; display: block;" >Punch-in</label>
@@ -44,7 +33,6 @@
                     class="btn btn-success btn-block">Punch-in</button>
                 <button [disabled] = "punchOutTime" *ngIf="!this.display" style="margin-top: 20px;" type="button" (click)="punchINandOut(false)"
                     class="btn btn-success btn-block">  Punch-out</button>
->>>>>>> Stashed changes
             </td>
 
         </tr>
@@ -66,12 +54,8 @@
             </tr>
             <tr>
                 <td colspan="2" style="padding: 8px;">
-<<<<<<< Updated upstream
-                    <button type="button" class="btn btn-success btn-block">Request Time Out</button>
-=======
                     <button type="button" class="btn btn-success btn-block" data-toggle="modal" data-backdrop="false"
                         data-target="#myModal">Request Time Out</button>
->>>>>>> Stashed changes
                 </td>
             </tr>
         </tbody>
@@ -97,7 +81,8 @@
 
         <!-- Modal content-->
         <div class="modal-content">
-<<<<<<< Updated upstream
+
+            <div class="modal-header">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
           </div>
@@ -106,16 +91,6 @@
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-=======
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-            <div class="modal-body">
-                <leave-modal></leave-modal>
-            </div>
-            <div class="modal-footer">
-            </div>
->>>>>>> Stashed changes
         </div>
     </div>
 </div>
