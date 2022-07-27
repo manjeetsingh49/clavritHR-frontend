@@ -8,6 +8,7 @@
     </thead>
     <tbody>
         <tr>
+<<<<<<< Updated upstream
             <td>10:10 AM</td>
             <td>00:00 PM</td>
         </tr>
@@ -17,6 +18,33 @@
             </td>
             <td>
 
+=======
+            <td>
+                <form>
+                    <label style="font-size: 12px; display: block;" >Punch-in</label>
+                    <small *ngIf="todayAttendance.length"
+                        style="border: 1px; background: white; padding: 5px 8px; color: black"> {{punchInTime
+                        | date:'shortTime' }} </small>
+                    <small *ngIf="!todayAttendance.length" style="border: 1px; background: white; padding: 5px 17px; color: black"  >--:--</small>
+                </form>
+            </td>
+            <td>
+                <form>
+                    <label style="font-size: 12px; display: block;">Punch-out</label>
+                    <small  style="border: 1px; background: white; padding: 5px 8px; color: black">{{punchOutTime |
+                        date:'shortTime' }} </small>
+                        <small *ngIf="display" style="border: 1px; background: white; padding: 5px 17px; color: black"  >--:--</small>
+            
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="padding: 8px;">
+                <button *ngIf="this.display" style="margin-top: 20px;" type="button" (click)="punchINandOut(true)"
+                    class="btn btn-success btn-block">Punch-in</button>
+                <button [disabled] = "punchOutTime" *ngIf="!this.display" style="margin-top: 20px;" type="button" (click)="punchINandOut(false)"
+                    class="btn btn-success btn-block">  Punch-out</button>
+>>>>>>> Stashed changes
             </td>
 
         </tr>
@@ -38,7 +66,12 @@
             </tr>
             <tr>
                 <td colspan="2" style="padding: 8px;">
+<<<<<<< Updated upstream
                     <button type="button" class="btn btn-success btn-block">Request Time Out</button>
+=======
+                    <button type="button" class="btn btn-success btn-block" data-toggle="modal" data-backdrop="false"
+                        data-target="#myModal">Request Time Out</button>
+>>>>>>> Stashed changes
                 </td>
             </tr>
         </tbody>
@@ -61,9 +94,10 @@
 
 <div id="myModal" class="modal">
     <div class="modal-dialog">
-  
+
         <!-- Modal content-->
         <div class="modal-content">
+<<<<<<< Updated upstream
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
           </div>
@@ -72,7 +106,16 @@
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+=======
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <leave-modal></leave-modal>
+            </div>
+            <div class="modal-footer">
+            </div>
+>>>>>>> Stashed changes
         </div>
     </div>
-  </div>
-  </div>
+</div>
