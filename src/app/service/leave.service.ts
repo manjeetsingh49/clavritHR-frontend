@@ -12,7 +12,6 @@ export class LeaveService {
   constructor(private http: HttpClient) { }
 
   public sendLeaveRequest(body: any): Observable<any> {
-   
     return this.http.post<any>('http://localhost:8080/leave-request', body);
   }
 }

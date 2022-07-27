@@ -1,43 +1,26 @@
 table {
-    width: 100%;
-    text-align: center;
-    margin-top: 20px;
-    font-size: 17px;
-    font-weight: bold;
-    color: white;
+    padding-left: 50%;
 
 }
 
-td,
-th {
-    padding: 1px;
+table.table td a.add {
+    color: #24aee4;
 }
-
-.btn-success {
-  
-    
-    background-color: #24aee4;
-    border-color: #24aee4;
+table.table td a.edit {
+    color: black;
 }
-
-a {
-    color: white;
+table.table td a.delete {
+    color:  black;
 }
-
-p {
-    margin: 6px 10px;
-    font-size: 15px;
-    color: white;
+.table-title .btn-group {
+	float: right;
 }
-
 .modal-header {
     background: #fff;
     border-radius: 5px 5px 0 0;
     -webkit-border-radius: 5px 5px 0 0;
     border-bottom: none;
-}
-.modal-header {
-    padding-right: 11px;
+   padding-right: 11px;
     padding-top: 5px;
     border-bottom: 0px solid white; 
     min-height: 16.428571429px;

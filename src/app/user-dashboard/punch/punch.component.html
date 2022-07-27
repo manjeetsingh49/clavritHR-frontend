@@ -1,19 +1,22 @@
 <table>
     <thead>
         <tr>
-            <td style="font-size: 12px;">Punch-in</td>
-            <td style="font-size: 12px;">Punch-out</td>
+
         </tr>
 
     </thead>
     <tbody>
         <tr>
-            <td>10:10 AM</td>
-            <td>00:00 PM</td>
+            <td><form >
+                <label  style="font-size: 12px; padding-right: 5px;" >Punch-in</label>
+                <input style=" text-align: center; color: black;" type="time"></form></td>
+                <td><form >
+                    <label style="font-size: 12px;" >Punch-out</label>
+                    <input style="text-align: center; color: black;" type="time" ></form></td>
         </tr>
         <tr>
             <td colspan="2" style="padding: 8px;">
-                <button type="button" class="btn btn-success btn-block">Punch-out</button>
+                <button style="margin-top: 20px;" type="button" class="btn btn-success btn-block">Punch-out</button>
             </td>
             <td>
 
@@ -38,7 +41,7 @@
             </tr>
             <tr>
                 <td colspan="2" style="padding: 8px;">
-                    <button type="button" class="btn btn-success btn-block">Request Time Out</button>
+                    <button type="button" class="btn btn-success btn-block"  data-toggle="modal" data-backdrop="false" data-target="#myModal">Request Time Out</button>
                 </td>
             </tr>
         </tbody>
@@ -57,8 +60,6 @@
     </table>
 </div>
 
-<a class="btn btn-success btn-block" data-toggle="modal" data-backdrop="false" data-target="#myModal">Request Time Out</a>
-
 <div id="myModal" class="modal">
     <div class="modal-dialog">
   
@@ -71,7 +72,6 @@
             <leave-modal></leave-modal>
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
     </div>
   </div>

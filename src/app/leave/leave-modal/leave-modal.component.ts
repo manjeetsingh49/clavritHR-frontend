@@ -15,6 +15,7 @@ export class LeaveModalComponent implements OnInit {
   public from: string = "";
   public to: string = "";
   public dtErr: string = "";
+  public message:string = "";
   public leaveType : any = [
     {"value":"sickLeave", "display" : "Sick Leave"},
     {"value":"vacation", "display" : "Vacation"},
@@ -27,16 +28,24 @@ export class LeaveModalComponent implements OnInit {
   }
 
   sendRequest() {
-    const body = {
+
+    if(!this.diffDays || this.seletecLeaveType === "Leave Type" || this.message === "") {
+     alert("Please add all details");
+     return;
+    }
+
+    var leaveReqDto:any = {
        'days': this.diffDays,
-       'leaveType' : this.seletecLeaveType
-      };
+       'leaveType' : this.seletecLeaveType,
+       'message': this.message
+      };  
     var code;
-    this.response = this.leaveService.sendLeaveRequest(body).subscribe(resp => {
+    this.response = this.leaveService.sendLeaveRequest(leaveReqDto).subscribe(resp => {
       console.log(resp);
       code = resp.code;
       this.response = resp;
       console.log("code : " + code)
+      alert("Successfully submitted");
     });
   }
 
@@ -49,6 +58,15 @@ export class LeaveModalComponent implements OnInit {
     } else {
       this.dtErr = "Please select both the dates";
     }
+  }
+
+  public clear() {
+    this.diffDays = "";
+    this.from = "";
+    this.to = "";
+    this.dtErr = "";
+    this.seletecLeaveType = "Leave Type";
+    this.message = "";
   }
 }
 
