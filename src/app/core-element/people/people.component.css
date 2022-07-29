@@ -1,6 +1,6 @@
-table {
-    padding-left: 50%;
-
+.table {
+    width: 87%;
+    margin-top: 10px;
 }
 
 table.table td a.add {
