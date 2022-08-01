@@ -1,31 +1,56 @@
 <app-user-sidebar></app-user-sidebar>
 <section id="main-content">
-  <section >
+  <section>
+      <div class="container">
+        <div class="table-title">
+          <div class="row">
+            <div class="container">
+              <h2>Clavrit <b>people</b></h2>
+            </div>
+            <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-<h1>Clavrit People</h1>
-<div style="padding: 25px;">
-    <table class="table table-bordered table-striped">
-      <thead style="background-color:  #24aee4;">
-      <tr style="color: white;">
-        <th>Name</th>
-        <th>Address</th>
-        <th>Emp-mail</th>
-        <th>Phone</th>
-        <th>Date Of Birth</th>
-        <th>Joinig Date</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let people of peoples">
-        <td><span>{{people.name}}</span></td>
-        <td><span>{{people.address}}</span></td>
-        <td><span>{{people.emp_mail}}</span></td>
-        <td><span>{{people.phone_num}}</span></td>
-        <td><span>{{people.dob}}</span></td>
-        <td><span>{{people.joining_date}}</span></td>
-      </tr>
-      </tbody>
-    </table>
-  </div>
+            <p style="float: right;">
+
+              <a href="#addEmployeeModal" style="background-color:#24aee4; float: right;margin-inline-end: 165px;margin-top: 36px;" class="btn btn-success float-end" data-toggle="modal" data-backdrop="false"
+                data-target="#regModal"><i class="material-icons"></i> <span >Add New Employee</span></a>
+            </p>
+
+          </div>
+        </div>
+
+        <table class="table table-bordered table-striped">
+          <thead style="background-color:  #24aee4;">
+            <tr style="color: white;">
+              <th>Name</th>
+              <th>Address</th>
+              <th>Emp-mail</th>
+              <th>Phone</th>
+              <th>Date Of Birth</th>
+              <th>Joinig Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let people of peoples">
+              <td><span>{{people.name}}</span></td>
+              <td><span>{{people.address}}</span></td>
+              <td><span>{{people.emp_mail}}</span></td>
+              <td><span>{{people.phone_num}}</span></td>
+              <td><span>{{people.dob}}</span></td>
+              <td><span>{{people.joining_date}}</span></td>
+              <td>
+                <a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
+                <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i
+                    class="material-icons">&#xE872;</i></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
   </section>
-</section>
+
+  <div id="regModal" class="modal">
+    <app-employeeprofile-modal></app-employeeprofile-modal>
+  </div>

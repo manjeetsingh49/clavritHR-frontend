@@ -7,19 +7,32 @@
     </thead>
     <tbody>
         <tr>
-            <td><form >
-                <label  style="font-size: 12px; padding-right: 5px;" >Punch-in</label>
-                <input style=" text-align: center; color: black;" type="time"></form></td>
-                <td><form >
-                    <label style="font-size: 12px;" >Punch-out</label>
-                    <input style="text-align: center; color: black;" type="time" ></form></td>
+
+            <td>
+                <form>
+                    <label style="font-size: 12px; display: block;" >Punch-in</label>
+                    <small *ngIf="todayAttendance.length"
+                        style="border: 1px; background: white; padding: 5px 8px; color: black"> {{punchInTime
+                        | date:'shortTime' }} </small>
+                    <small *ngIf="!todayAttendance.length" style="border: 1px; background: white; padding: 5px 17px; color: black"  >--:--</small>
+                </form>
+            </td>
+            <td>
+                <form>
+                    <label style="font-size: 12px; display: block;">Punch-out</label>
+                    <small  style="border: 1px; background: white; padding: 5px 8px; color: black">{{punchOutTime |
+                        date:'shortTime' }} </small>
+                        <small *ngIf="display" style="border: 1px; background: white; padding: 5px 17px; color: black"  >--:--</small>
+            
+                </form>
+            </td>
         </tr>
         <tr>
             <td colspan="2" style="padding: 8px;">
-                <button style="margin-top: 20px;" type="button" class="btn btn-success btn-block">Punch-out</button>
-            </td>
-            <td>
-
+                <button *ngIf="this.display" style="margin-top: 20px;" type="button" (click)="punchINandOut(true)"
+                    class="btn btn-success btn-block">Punch-in</button>
+                <button [disabled] = "punchOutTime" *ngIf="!this.display" style="margin-top: 20px;" type="button" (click)="punchINandOut(false)"
+                    class="btn btn-success btn-block">  Punch-out</button>
             </td>
 
         </tr>
@@ -41,7 +54,9 @@
             </tr>
             <tr>
                 <td colspan="2" style="padding: 8px;">
-                    <button type="button" class="btn btn-success btn-block"  data-toggle="modal" data-backdrop="false" data-target="#myModal">Request Time Out</button>
+
+                    <button type="button" class="btn btn-success btn-block" data-toggle="modal" data-backdrop="false"
+                        data-target="#myModal">Request Time Out</button>
                 </td>
             </tr>
         </tbody>
@@ -62,9 +77,11 @@
 
 <div id="myModal" class="modal">
     <div class="modal-dialog">
-  
+
         <!-- Modal content-->
         <div class="modal-content">
+
+            <div class="modal-header">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
           </div>
@@ -74,5 +91,4 @@
         <div class="modal-footer">
         </div>
     </div>
-  </div>
-  </div>
+</div>

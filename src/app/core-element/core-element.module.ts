@@ -6,8 +6,15 @@ import { AppRoutingModule } from '../app-routing.module';
 import { AboutComponent } from './about/about.component';
 import { UserDashboardModule } from '../user-dashboard/user-dashboard.module';
 import { PeopleComponent } from './people/people.component';
+
 import { MyInfoComponent } from './myinfo/myinfo.component';
+
+import { HiringComponent } from './hiring/hiring.component';
 import { LoginModule } from '../login/login.module';
+
+import { EmployeeprofileModalComponent } from '../employeeprofile-modal/employeeprofile-modal.component';
+import {  FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -15,23 +22,29 @@ import { LoginModule } from '../login/login.module';
     HomeComponent,
     AboutComponent,
     PeopleComponent,
+
     MyInfoComponent,
-  
+    HiringComponent,
+    EmployeeprofileModalComponent
+
   ],
   imports: [
     CommonModule,
     AppRoutingModule,
     UserDashboardModule,
-    LoginModule
-    
-
+    LoginModule,
+    FormsModule
   ],
   exports: [
     NavigationComponent,
     HomeComponent,
     AboutComponent,
     PeopleComponent,
-    MyInfoComponent
-  ]
+    MyInfoComponent,
+    HiringComponent,
+    EmployeeprofileModalComponent,
+  ],
+
+
 })
-export class CoreElementModule { }
+export class CoreElementModule {}

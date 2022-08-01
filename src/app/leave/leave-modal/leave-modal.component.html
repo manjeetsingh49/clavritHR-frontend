@@ -3,9 +3,9 @@
     <br>
     
         <label for="From">From*:</label>
-        <input class="form-control" type="date" id="from" name="from"  [(ngModel)]="from" (input)="dateDiff()">
+        <input class="form-control" type="date" id="from" name="from" [(ngModel)]="from" (input)="dateDiff()">
         <label for=" To">To*:</label>
-        <input class="form-control" type="date" id="to" name="To"  [(ngModel)]="to" (input)="dateDiff()">
+        <input class="form-control" type="date" id="to" name="To" [(ngModel)]="to" (input)="dateDiff()">
         {{dtErr}}
     <br>
     
@@ -15,8 +15,9 @@
       <option  selected disabled hidden>{{seletecLeaveType}}</option>
       <option *ngFor="let leaves of leaveType" value="{{leaves.value}}">{{leaves.display}}</option>
     </select> <br>
-    
-    <p> <span>Total Days*</span> <span> {{diffDays}}</span> <span *ngif="diffDays>=0">Day</span></p>
+    <p> <span>Total Days*</span> <span> {{diffDays}}</span> <span *ngIf="diffDays>=0">Day</span></p>
+
+
     
     Note
     <p>
