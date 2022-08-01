@@ -1,6 +1,7 @@
 import { DATE_PIPE_DEFAULT_TIMEZONE } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { punchIn } from 'src/app/class/punchIn.class';
+import {punchIn } from 'src/app/class/punchIn.class';
+import { AuthenticationService } from 'src/app/service/authentication.service';
 import { PunchService } from 'src/app/service/punch.service';
 
 
@@ -10,12 +11,12 @@ import { PunchService } from 'src/app/service/punch.service';
   styleUrls: ['./punch.component.css']
 })
 export class PunchComponent implements OnInit {
+  authService: any;
 
 
-  constructor(private punchService: PunchService) {
+  constructor(private punchService: PunchService ,private AuthenticationService: AuthenticationService) {
   }
 
-  
 
   punchInTime: any;
   punchOutTime: any;
@@ -29,6 +30,7 @@ export class PunchComponent implements OnInit {
   punchINandOut(isPunchIn: boolean) {
     if (isPunchIn) {
       this.punchInTime = new Date();
+      this.punchInClass.empId =  this.AuthenticationService.getData(this.AuthenticationService.TOKEN_KEY);;
       this.toggle();
       this.punchInClass.punchIn = new Date();
       this.punchInClass.createdOn = new Date();
@@ -40,7 +42,8 @@ export class PunchComponent implements OnInit {
       console.log("in punch out condition:: " + this.punchInClass.punchOut);
     }
     this.todayAttendance.push(this.punchInClass);
-    this.punchInClass.empId = 10;
+    const empid=this.AuthenticationService.TOKEN_KEY;
+    this.punchInClass.empId =  empid;
     this.punchService.punchInOut(this.punchInClass).subscribe(resp => {
       console.log("punchIn: " + resp);
     });

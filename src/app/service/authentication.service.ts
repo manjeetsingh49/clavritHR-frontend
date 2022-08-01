@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthenticationService {
-  TOKEN_KEY: string = "token";
+  TOKEN_KEY: string = "id";
   TOKEN_VALUE: string = "password";
   isLogin:boolean = false;
   constructor() { }
@@ -15,7 +15,11 @@ export class AuthenticationService {
   }
 
   public getData(key: string) {
-    return localStorage.getItem(key)
+    var data =  localStorage.getItem(key);
+    if(data == undefined){
+      data = "";
+    }
+    return data;
   }
   public removeData(key: string) {
     localStorage.removeItem(key);

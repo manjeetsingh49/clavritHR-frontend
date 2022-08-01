@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
 
       console.log("code : " + code)
       if (code == 200) {
-        this.authService.saveData(this.authService.TOKEN_KEY, this.authService.TOKEN_VALUE);
+        this.authService.saveData(this.authService.TOKEN_KEY = id, this.authService.TOKEN_VALUE = password);
         this.route.navigate(["/user-dashboard"]);
       }  else if (code == 201) {
         this.authService.saveData(this.authService.TOKEN_KEY, this.authService.TOKEN_VALUE);
