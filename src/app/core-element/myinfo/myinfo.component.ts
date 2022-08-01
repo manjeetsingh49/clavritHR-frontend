@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { EmployeeService } from 'src/app/service/employee.service';
 import { HttpClient } from '@angular/common/http';
 export class MyInfo {
   constructor(
-  public Name: String,
+  public name: String,
   public  address: String,
   public  emp_mail: String,
   public  phone_num: String,
@@ -22,15 +21,15 @@ export class MyInfoComponent implements OnInit {
   
   myinfo: MyInfo[] = [];
   constructor( 
-     private HttpClient: HttpClient
+     private httpClient: HttpClient
   ) { }
 
   ngOnInit(): void {
     this.getUserinfo();
   }
     getUserinfo(){
-      this.HttpClient.get<any>('http://localhost:8080/getMyInfo').subscribe(Response=> {this.myinfo=Response});
-        
+      this.httpClient.get<any>('http://localhost:8080/getMyInfo').subscribe((Response)=> {this.myinfo=Response});
+        console.log(this.myinfo)
         }
       }
     

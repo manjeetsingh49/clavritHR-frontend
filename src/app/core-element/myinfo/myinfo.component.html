@@ -1,21 +1,21 @@
 <app-user-sidebar></app-user-sidebar>
 <section id="main-content">
-    <section >
+    <section  class="wrapper">
   
-  <html>
+
       <head>
           <title>My Info</title>
       </head>
-      <body style= "width: 104%;height: 466px;">
-          <h1 style="margin-top: 14px;margin-left: 98px;"><b>Basic Information</b></h1>
-          
-  <h3 style="background-color:  #e6dfdf;"><b>Employe Name :</b>{{employeeDetail.name}}</h3>
-  <h3 style="background-color: #e6dfdf;"><b>Address :</b>{{employeeDetail.address}}</h3>
-  <h3 style="background-color: #e6dfdf;"><b>Email id :</b>{{employeeDetail.emp_mail}}</h3>
+      <div   *ngFor="let myinfo of myinfo" style= " margin: 59px; width: 60%; ">
+          <h1 style= " font-size: 15px; margin-top: 14px;margin-left: 98px;"><p></p></h1>
+        
+  <h3 style="background-color:  #e6dfdf;"><b>Employe Name :</b>{{myinfo.name}}</h3>
+  <h3 style="background-color: #e6dfdf;"><b>Address :</b>{{myinfo.address}}</h3>
+  <h3 style="background-color: #e6dfdf;"><b>Email id :</b>{{myinfo.emp_mail}}</h3>
 
-  <h3 style="background-color:  #e6dfdf;"><b>Joining Date :</b>{{employeeDetail.joining_date}} </h3>
-  <h3 style="background-color: #e6dfdf;"><b>Mobile No. :</b>{{employeeDetail.phone_num}}</h3>
-      </body>
-  </html>
+  <h3 style="background-color:  #e6dfdf;"><b>Joining Date :</b>{{myinfo.joining_date}} </h3>
+  <h3 style="background-color: #e6dfdf;"><b>Mobile No. :</b>{{myinfo.phone_num}}</h3>
+      </div>
+
     </section>
   </section>

@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: 'user-dashboard', component: UserDashboardComponent },
   { path: 'about', component: AboutComponent },
   { path: 'people', component: PeopleComponent },
-  { path: 'myinfo', component: MyInfoComponent },
+  { path: 'MyInfo', component: MyInfoComponent },
   { path: 'hiring', component: HiringComponent },
   { path : 'employee-profile', component:EmployeeprofileModalComponent},
 
