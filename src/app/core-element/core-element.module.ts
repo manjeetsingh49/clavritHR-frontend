@@ -6,7 +6,8 @@ import { AppRoutingModule } from '../app-routing.module';
 import { AboutComponent } from './about/about.component';
 import { UserDashboardModule } from '../user-dashboard/user-dashboard.module';
 import { PeopleComponent } from './people/people.component';
-import { MyinfoComponent } from './myinfo/myinfo.component';
+
+import { MyInfoComponent } from './myinfo/myinfo.component';
 
 import { HiringComponent } from './hiring/hiring.component';
 import { LoginModule } from '../login/login.module';
@@ -21,9 +22,11 @@ import {  FormsModule } from '@angular/forms';
     HomeComponent,
     AboutComponent,
     PeopleComponent,
-    MyinfoComponent,
+
+    MyInfoComponent,
     HiringComponent,
     EmployeeprofileModalComponent
+
   ],
   imports: [
     CommonModule,
@@ -37,10 +40,11 @@ import {  FormsModule } from '@angular/forms';
     HomeComponent,
     AboutComponent,
     PeopleComponent,
-    MyinfoComponent,
+    MyInfoComponent,
     HiringComponent,
     EmployeeprofileModalComponent,
   ],
+
 
 })
 export class CoreElementModule {}

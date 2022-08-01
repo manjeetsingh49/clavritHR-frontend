@@ -6,8 +6,9 @@ import { LoginComponent } from './login/login/login.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard/user-dashboard.component';
 import { AboutComponent } from './core-element/about/about.component';
 import { PeopleComponent } from './core-element/people/people.component';
-import { MyinfoComponent } from './core-element/myinfo/myinfo.component';
+import { MyInfoComponent } from './core-element/myinfo/myinfo.component';
 import { HiringComponent } from './core-element/hiring/hiring.component';
+
 
 import { EmployeeprofileModalComponent } from './employeeprofile-modal/employeeprofile-modal.component';
 const routes: Routes = [
@@ -17,9 +18,10 @@ const routes: Routes = [
   { path: 'user-dashboard', component: UserDashboardComponent },
   { path: 'about', component: AboutComponent },
   { path: 'people', component: PeopleComponent },
-  { path: 'myinfo', component: MyinfoComponent },
+  { path: 'myinfo', component: MyInfoComponent },
   { path: 'hiring', component: HiringComponent },
   { path : 'employee-profile', component:EmployeeprofileModalComponent},
+
 ];
 
 @NgModule({
