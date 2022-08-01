@@ -1,36 +1,21 @@
 <app-user-sidebar></app-user-sidebar>
 <section id="main-content">
-  <section >
+    <section >
+  
+  <html>
+      <head>
+          <title>My Info</title>
+      </head>
+      <body style= "width: 104%;height: 466px;">
+          <h1 style="margin-top: 14px;margin-left: 98px;"><b>Basic Information</b></h1>
+          
+  <h3 style="background-color:  #e6dfdf;"><b>Employe Name :</b>{{employeeDetail.name}}</h3>
+  <h3 style="background-color: #e6dfdf;"><b>Address :</b>{{employeeDetail.address}}</h3>
+  <h3 style="background-color: #e6dfdf;"><b>Email id :</b>{{employeeDetail.emp_mail}}</h3>
 
-<html>
-    <head>
-        <title>My Info</title>
-    </head>
-    <body style="background-color: lightblue ;width: 104%;height: 466px;">
-        <h1 style="margin-top: 14px;margin-left: 98px;"><b>Basic Information</b></h1>
-        
-<form style="margin-left: 71px; margin-top: 67px;">
-    <label><b>Employe</b></label>
-    <input type="text">
-</form>
-<form style="margin-left: 318px; margin-top: -27px;">
-    <label><b>Status</b></label>
-    <input type="text">
-</form>
-<form style="margin-left: 84px; margin-top: 66px;">
-    <label><b>Name</b></label>
-    <input type="text">
-</form>
-<form style="margin-left: 300px; margin-top: -26px;">
-    <label></label>
-    <input type="text">
-</form>
-<form style="margin-left: 479px;margin-top: -25px;">
-    <label>Preferred Name</label>
-    <input type="tel">
-</form>
-
-</body>
-</html>
+  <h3 style="background-color:  #e6dfdf;"><b>Joining Date :</b>{{employeeDetail.joining_date}} </h3>
+  <h3 style="background-color: #e6dfdf;"><b>Mobile No. :</b>{{employeeDetail.phone_num}}</h3>
+      </body>
+  </html>
+    </section>
   </section>
-</section>

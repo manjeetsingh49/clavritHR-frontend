@@ -6,7 +6,7 @@ import { AppRoutingModule } from '../app-routing.module';
 import { AboutComponent } from './about/about.component';
 import { UserDashboardModule } from '../user-dashboard/user-dashboard.module';
 import { PeopleComponent } from './people/people.component';
-import { MyinfoComponent } from './myinfo/myinfo.component';
+import { MyInfoComponent } from './myinfo/myinfo.component';
 import { LoginModule } from '../login/login.module';
 
 @NgModule({
@@ -15,7 +15,7 @@ import { LoginModule } from '../login/login.module';
     HomeComponent,
     AboutComponent,
     PeopleComponent,
-    MyinfoComponent,
+    MyInfoComponent,
   
   ],
   imports: [
@@ -31,7 +31,7 @@ import { LoginModule } from '../login/login.module';
     HomeComponent,
     AboutComponent,
     PeopleComponent,
-    MyinfoComponent
+    MyInfoComponent
   ]
 })
 export class CoreElementModule { }
