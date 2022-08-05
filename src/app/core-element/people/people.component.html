@@ -22,27 +22,38 @@
           <thead style="background-color:  #24aee4;">
             <tr style="color: white;">
               <th>Name</th>
-              <th>Address</th>
-              <th>Emp-mail</th>
-              <th>Phone</th>
-              <th>Date Of Birth</th>
+              <th>Surname</th>
               <th>Joinig Date</th>
-              <th>Actions</th>
+              <th>Employment Status</th>
+              <th>Job Title</th>
+              <th>Department</th>
+              <th>Email</th>
+              <th>Address</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
             <tr *ngFor="let people of peoples">
               <td><span>{{people.name}}</span></td>
-              <td><span>{{people.address}}</span></td>
-              <td><span>{{people.emp_mail}}</span></td>
-              <td><span>{{people.phone_num}}</span></td>
-              <td><span>{{people.dob}}</span></td>
+              <td><span>{{people.surname}}</span></td>
               <td><span>{{people.joining_date}}</span></td>
+              <td><span>{{people.emp_status}}</span></td>
+              <td><span>{{people.job_title}}</span></td>
+              <td><span>{{people.department}}</span></td>
+              <td><span>{{people.email}}</span></td>
+              <td><span>{{people.address}}</span></td>
               <td>
-                <a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
+                 <!-- <a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
                 <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
                 <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i
-                    class="material-icons">&#xE872;</i></a>
+                    class="material-icons">&#xE872;</i></a> -->
+                    <button class="btn btn-sm btn-info" (click)="openDetails()">
+                      <i class="fa fa-search"></i>Details</button>
+                    <button class="btn btn-sm btn-warning">
+                      <i class="fa fa-edit"></i>Edit</button>
+                    <button class="btn btn-sm btn-danger">
+                      <i class="fa fa-remove"></i>Delete</button>
+                    
               </td>
             </tr>
           </tbody>
@@ -54,3 +65,68 @@
   <div id="regModal" class="modal">
     <app-employeeprofile-modal></app-employeeprofile-modal>
   </div>
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">New Friend</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <div class="input-group">
+            <input id="name" class="form-control" >
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="surname">Surname</label>
+          <div class="input-group">
+            <input id="surname" class="form-control" >
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="joining_date">Joinig Date</label>
+          <div class="input-group">
+            <input id="joining_date" class="form-control" >
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="emp_status">Employment Status</label>
+          <div class="input-group">
+            <input id="emp_status" class="form-control" >
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="job_title">Job Title</label>
+          <div class="input-group">
+            <input id="job_title" class="form-control" >
+          </div>
+        </div>
+        v
+        <div class="form-group">
+          <label for="department">Department</label>
+          <div class="input-group">
+            <input id="department" class="form-control" >
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <div class="input-group">
+            <input id="email" class="form-control" >
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="address">Address</label>
+          <div class="input-group">
+            <input id="address" class="form-control" >
+          </div>
+        </div>
+        
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+    </div>
+  </ng-template>
