@@ -10,9 +10,9 @@
     <br>
     
     
-    <label for="Time of Type*">Time of type*:</label><br>
-    <select [(ngModel)]="seletecLeaveType"  class="form-control" name="timeOfType" id="timeOfType">
-      <option  selected disabled hidden>{{seletecLeaveType}}</option>
+    <label for="Time of Type*">Type of Leave:</label><br>
+    <select [(ngModel)]="selectLeaveType"  class="form-control" name="timeOffType" id="timeOffType">
+      <option  selected disabled hidden>{{selectLeaveType}}</option>
       <option *ngFor="let leaves of leaveType" value="{{leaves.value}}">{{leaves.display}}</option>
     </select> <br>
     <p> <span>Total Days*</span> <span> {{diffDays}}</span> <span *ngIf="diffDays>=0">Day</span></p>

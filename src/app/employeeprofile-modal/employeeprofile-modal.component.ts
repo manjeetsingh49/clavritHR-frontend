@@ -29,12 +29,20 @@ export class EmployeeprofileModalComponent implements OnInit {
    let body = new EmployeeRequestDto(this.ePersonalDetails, this.eHrmsDetails, this.eMasterDetails);
    this.empService.sendEmployeeDetails(body).subscribe(resp => {
     console.log(resp);
-    alert("Successfully submitted");
+    alert(resp.message);
     this.ePersonalDetails = new EmployeePersonalDetail("", "", "", 18, "", "", "");
     this.eHrmsDetails = new EmployeeHrmsDetail;
     this.eMasterDetails = new EmployeeMasterDetails;
    
-  });
+  },
+  error => {
+    console.log(error);
+    alert(error.error.message);
+  }
+  )
+  
+  ;
+  ;
   }
 
 }

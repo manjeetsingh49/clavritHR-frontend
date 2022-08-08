@@ -67,6 +67,15 @@ body{
     box-shadow: none;
 }
 
+input, select, textarea{
+    color: black;
+}
+ 
+option:checked { font-weight: bold;
+    background-color: white !important;
+    color: black;
+}
+
 .modal-header {
     background: #fff;
     border-radius: 5px 5px 0 0;

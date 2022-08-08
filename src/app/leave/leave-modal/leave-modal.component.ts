@@ -21,7 +21,7 @@ export class LeaveModalComponent implements OnInit {
     {"value":"vacation", "display" : "Vacation"},
     {"value":"covid", "display" : "Covid"},
   ]
-  public seletecLeaveType: string = "Leave Type"
+  public selectLeaveType: string = "Leave Type"
 
   constructor(private leaveService: LeaveService) { }
   ngOnInit(): void {
@@ -29,15 +29,17 @@ export class LeaveModalComponent implements OnInit {
 
   sendRequest() {
 
-    if(!this.diffDays || this.seletecLeaveType === "Leave Type" || this.message === "") {
+    if(!this.diffDays || this.selectLeaveType === "Leave Type" || this.message === "") {
      alert("Please add all details");
      return;
     }
 
     var leaveReqDto:any = {
-       'days': this.diffDays,
-       'leaveType' : this.seletecLeaveType,
-       'message': this.message
+       'no_of_days': this.diffDays,
+       'leaveType' : this.selectLeaveType,
+       'message': this.message,
+       'from_date': this.from,
+       'to_date': this.to
       };  
     var code;
     this.response = this.leaveService.sendLeaveRequest(leaveReqDto).subscribe(resp => {
@@ -65,7 +67,7 @@ export class LeaveModalComponent implements OnInit {
     this.from = "";
     this.to = "";
     this.dtErr = "";
-    this.seletecLeaveType = "Leave Type";
+    this.selectLeaveType = "Leave Type";
     this.message = "";
   }
 }
