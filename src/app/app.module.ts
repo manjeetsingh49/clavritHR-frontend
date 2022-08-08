@@ -9,8 +9,7 @@ import { LoginModule } from './login/login.module';
 import { HttpClientModule } from '@angular/common/http';
 import { UserDashboardModule } from './user-dashboard/user-dashboard.module';
 import { DatePipe } from '@angular/common';
-import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
-
+import { NgxUiLoaderModule,NgxUiLoaderHttpModule}  from 'ngx-ui-loader'
 
 @NgModule({
   declarations: [
@@ -31,9 +30,7 @@ import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
         maxTime: 300, 
         minTime: 10 
       }
-    )
-
-  ],
+    )],
   providers: [DatePipe],
   bootstrap: [AppComponent]
 })
