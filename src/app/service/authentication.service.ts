@@ -7,10 +7,13 @@ export class AuthenticationService {
   TOKEN_KEY: string = "id";
   TOKEN_VALUE: string = "password";
   isLogin:boolean = false;
-  constructor() { }
+  constructor() { 
+    this.isLogin = this.getData(this.TOKEN_KEY)? true : false;
+  }
 
   public saveData(key: string, value: string) {
-    localStorage.setItem(key, value);
+    localStorage.setItem(this.TOKEN_KEY, key);
+    localStorage.setItem(this.TOKEN_VALUE, value);
     this.isLogin = true;
   }
 

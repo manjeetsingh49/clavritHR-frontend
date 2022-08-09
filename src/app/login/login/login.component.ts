@@ -21,6 +21,9 @@ export class LoginComponent implements OnInit {
   constructor(private loginService: LoginService, private route: Router, private authService: AuthenticationService) { }
 
   ngOnInit(): void {
+    if(this.authService.isLogin) {
+      this.route.navigate(["/user-dashboard"]);
+    }
   }
 
   login(id: string, password: string) {
@@ -34,11 +37,8 @@ export class LoginComponent implements OnInit {
 
       console.log("code : " + code)
       if (code == 200) {
-        this.authService.saveData(this.authService.TOKEN_KEY = id, this.authService.TOKEN_VALUE = password);
+        this.authService.saveData(id, password);
         this.route.navigate(["/user-dashboard"]);
-      }  else if (code == 201) {
-        this.authService.saveData(this.authService.TOKEN_KEY, this.authService.TOKEN_VALUE);
-        this.route.navigate(["/leave"]);
       } else {
         this.msg = "Invalid credentials, Please enter correct";
       }

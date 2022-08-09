@@ -17,9 +17,8 @@ export class NavigationComponent implements OnInit {
   }
 
   logout() {
-    this.authService.removeData("token");
+    this.authService.clearData();
     this.route.navigate(["hrms"]);
-
   }
 
 }
