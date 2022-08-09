@@ -14,6 +14,7 @@ import { LoginModule } from '../login/login.module';
 
 import { EmployeeprofileModalComponent } from '../employeeprofile-modal/employeeprofile-modal.component';
 import {  FormsModule } from '@angular/forms';
+import { DocumentComponent } from './myinfo/document/document.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import {  FormsModule } from '@angular/forms';
 
     MyInfoComponent,
     HiringComponent,
-    EmployeeprofileModalComponent
+    EmployeeprofileModalComponent,
+    DocumentComponent
 
   ],
   imports: [

@@ -5,18 +5,76 @@
 
       <head>
           <title>My Info</title>
-      </head>
-      <h1 style="margin-left: 58px;"><b>Basic Information</b></h1>
-      <div   *ngFor="let myinfo of myinfo" style= " margin: 59px; width: 60%; ">
-          <h1 style= " font-size: 15px; margin-top: 14px;margin-left: 98px;"><p></p></h1>
-        
-  <h3 style="background-color:  #e6dfdf;"><b>Employe Name :</b>{{myinfo.name}}</h3>
-  <h3 style="background-color: #e6dfdf;"><b>Address :</b>{{myinfo.address}}</h3>
-  <h3 style="background-color: #e6dfdf;"><b>Email id :</b>{{myinfo.emp_mail}}</h3>
 
-  <h3 style="background-color:  #e6dfdf;"><b>Joining Date :</b>{{myinfo.joining_date}} </h3>
-  <h3 style="background-color: #e6dfdf;"><b>Mobile No. :</b>{{myinfo.phone_num}}</h3>
+      </head>
+      <div class="horizontal-menu navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+
+        <li><a class="btn" routerLink="user-dashboard" routerLinkActive="active">Home</a></li>
+        <li><a class="btn" routerLink="about" routerLinkActive="active">about us</a></li>
+        <li><a mat-button routerLink="people" routerLinkActive="active">People</a></li>
+        <li ><a mat-button routerLink="MyInfo" routerLinkActive="active">My Info</a></li>
+        <li ><a mat-button routerLink="hiring" routerLinkActive="active">Hiring</a></li>
+
+    </ul>
       </div>
+      <body>
+
+      <h1 style="margin-left: 58px;background-color:#24aee4;color: white;"><b>Basic Information</b></h1>
+      <div   *ngFor="let myinfo of myinfo" style= " margin: 59px; width: 60%; ">
+          
+        
+ 
+  <table>
+    <style>
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+      
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+      </style>
+    <tr>
+      <td style="background-color:#24aee4;color: white;"><b>Employe Name</b></td>
+      <td>{{myinfo.name}}</td>
+      
+    </tr>
+    <tr>
+      <td style="background-color:#24aee4;color: white;"><b>Address</b></td>
+      <td>{{myinfo.address}}</td>
+      
+    </tr>
+    <tr>
+      <td style="background-color: #24aee4;color: white;"><b>Email Id</b></td>
+      <td>{{myinfo.emp_mail}}</td>
+      
+    </tr>
+    <tr>
+      <td style="background-color:#24aee4;color: white;"><b>Joining Date</b></td>
+      <td>{{myinfo.joining_date}}</td>
+      
+    </tr>
+    <tr>
+      <td style="background-color: #24aee4;color: white;"><b>Mobile No.</b></td>
+      <td>{{myinfo.phone_num}}</td>
+      
+   
+  </table>
+
+
+      </div>
+      <button>Download</button>
+      <button>Upload</button>
+    </body>
 
     </section>
   </section>
