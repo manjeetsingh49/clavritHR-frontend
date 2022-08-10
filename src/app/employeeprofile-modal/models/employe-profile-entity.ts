@@ -22,12 +22,11 @@ export class EmployeeHrmsDetail {
     email:string="";
 	department:string="";
 	doj:Date = new Date();
-	casual_leaves?:number;
-	sick_leaves?:number;
-	earn_leaves?:number;
+	sick_leaves?:number
 };
 
 export class EmployeeMasterDetails {
+    id?:string;
     role:string="";
 	active:string='';
 	type:string="";

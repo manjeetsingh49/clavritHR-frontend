@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from 'src/app/service/authentication.service';
 import { LeaveService } from 'src/app/service/leave.service';
 
 @Component({
@@ -21,30 +22,33 @@ export class LeaveModalComponent implements OnInit {
     {"value":"vacation", "display" : "Vacation"},
     {"value":"covid", "display" : "Covid"},
   ]
-  public selectLeaveType: string = "Leave Type"
+  public selectLeaveType: string = "Leave type"
+  todate: any;
+  eMasterDetails: any;
 
-  constructor(private leaveService: LeaveService) { }
+  constructor(private leaveService: LeaveService, private authService: AuthenticationService) { }
   ngOnInit(): void {
   }
 
   sendRequest() {
 
-    if(!this.diffDays || this.selectLeaveType === "Leave Type" || this.message === "") {
+    if(!this.diffDays || this.selectLeaveType === "Leave_type" || this.message === "") {
      alert("Please add all details");
      return;
     }
-
+    
     var leaveReqDto:any = {
-       'no_of_days': this.diffDays,
-       'leaveType' : this.selectLeaveType,
+       'no_of_leave': this.diffDays,
+       'leave_type' : this.selectLeaveType,
        'message': this.message,
        'from_date': this.from,
-       'to_date': this.to
+       'to_date': this.to,
+       'emp_id': this.authService.getData(this.authService.TOKEN_KEY)
       };  
-    var code;
-    this.response = this.leaveService.sendLeaveRequest(leaveReqDto).subscribe(resp => {
+    
+    this.leaveService.sendLeaveRequest(leaveReqDto).subscribe(resp => {
       console.log(resp);
-      code = resp.code;
+      var code = resp.code;
       this.response = resp;
       console.log("code : " + code)
       alert("Successfully submitted");
@@ -67,7 +71,7 @@ export class LeaveModalComponent implements OnInit {
     this.from = "";
     this.to = "";
     this.dtErr = "";
-    this.selectLeaveType = "Leave Type";
+    this.selectLeaveType = "Leave_Type";
     this.message = "";
   }
 }
