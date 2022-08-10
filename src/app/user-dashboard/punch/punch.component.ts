@@ -29,8 +29,8 @@ export class PunchComponent implements OnInit {
 
   punchINandOut(isPunchIn: boolean) {
     if (isPunchIn) {
-      this.punchInTime = new Date();
-      this.punchInClass.empId =  this.AuthenticationService.getData(this.AuthenticationService.TOKEN_KEY);;
+       this.punchInTime = new Date();
+      this.punchInClass.empId =  this.AuthenticationService.getData(this.AuthenticationService.TOKEN_KEY);
       this.toggle();
       this.punchInClass.punchIn = new Date();
       this.punchInClass.createdOn = new Date();
@@ -42,8 +42,6 @@ export class PunchComponent implements OnInit {
       console.log("in punch out condition:: " + this.punchInClass.punchOut);
     }
     this.todayAttendance.push(this.punchInClass);
-    const empid=this.AuthenticationService.TOKEN_KEY;
-    this.punchInClass.empId =  empid;
     this.punchService.punchInOut(this.punchInClass).subscribe(resp => {
       console.log("punchIn: " + resp);
     });
