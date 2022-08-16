@@ -17,13 +17,13 @@ import {  FormsModule } from '@angular/forms';
 import { DocumentComponent } from './myinfo/document/document.component';
 
 
+
 @NgModule({
   declarations: [
     NavigationComponent,
     HomeComponent,
     AboutComponent,
     PeopleComponent,
-
     MyInfoComponent,
     HiringComponent,
     EmployeeprofileModalComponent,
@@ -45,6 +45,7 @@ import { DocumentComponent } from './myinfo/document/document.component';
     MyInfoComponent,
     HiringComponent,
     EmployeeprofileModalComponent,
+    
   ],
 
 

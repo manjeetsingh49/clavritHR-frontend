@@ -8,9 +8,9 @@ import { AboutComponent } from './core-element/about/about.component';
 import { PeopleComponent } from './core-element/people/people.component';
 import { MyInfoComponent } from './core-element/myinfo/myinfo.component';
 import { HiringComponent } from './core-element/hiring/hiring.component';
-
-
 import { EmployeeprofileModalComponent } from './employeeprofile-modal/employeeprofile-modal.component';
+import { AttendenceReportComponent } from './attendence-report/attendence-report.component';
+
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'hrms', component: LoginComponent },
@@ -21,6 +21,7 @@ const routes: Routes = [
   { path: 'MyInfo', component: MyInfoComponent },
   { path: 'hiring', component: HiringComponent },
   { path : 'employee-profile', component:EmployeeprofileModalComponent},
+  { path : 'attendence-report', component:AttendenceReportComponent}
 
 ];
 

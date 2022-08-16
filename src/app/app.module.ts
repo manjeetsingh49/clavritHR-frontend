@@ -9,11 +9,14 @@ import { LoginModule } from './login/login.module';
 import { HttpClientModule } from '@angular/common/http';
 import { UserDashboardModule } from './user-dashboard/user-dashboard.module';
 import { DatePipe } from '@angular/common';
-import { NgxUiLoaderModule,NgxUiLoaderHttpModule}  from 'ngx-ui-loader'
+import { NgxUiLoaderModule,NgxUiLoaderHttpModule}  from 'ngx-ui-loader';
+import { AttendenceReportComponent } from './attendence-report/attendence-report.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    AttendenceReportComponent
+    
     ],
   imports: [
     BrowserModule,
@@ -30,7 +33,8 @@ import { NgxUiLoaderModule,NgxUiLoaderHttpModule}  from 'ngx-ui-loader'
         maxTime: 300, 
         minTime: 10 
       }
-    )],
+    )
+  ],
   providers: [DatePipe],
   bootstrap: [AppComponent]
 })
