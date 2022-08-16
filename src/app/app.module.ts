@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModel } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
@@ -11,6 +11,7 @@ import { UserDashboardModule } from './user-dashboard/user-dashboard.module';
 import { DatePipe } from '@angular/common';
 import { NgxUiLoaderModule,NgxUiLoaderHttpModule}  from 'ngx-ui-loader';
 import { AttendenceReportComponent } from './attendence-report/attendence-report.component';
+import { NgModule } from '@angular/core';
 
 @NgModule({
   declarations: [

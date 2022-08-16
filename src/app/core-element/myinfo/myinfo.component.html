@@ -8,18 +8,10 @@
 
       </head>
       <div class="horizontal-menu navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-
-        <li><a class="btn" routerLink="user-dashboard" routerLinkActive="active">Home</a></li>
-        <li><a class="btn" routerLink="about" routerLinkActive="active">about us</a></li>
-        <li><a mat-button routerLink="people" routerLinkActive="active">People</a></li>
-        <li ><a mat-button routerLink="MyInfo" routerLinkActive="active">My Info</a></li>
-        <li ><a mat-button routerLink="hiring" routerLinkActive="active">Hiring</a></li>
-
-    </ul>
+      
       </div>
       <body>
-
+       
       <h1 style="margin-left: 58px;background-color:#24aee4;color: white;"><b>Basic Information</b></h1>
       <div   *ngFor="let myinfo of myinfo" style= " margin: 59px; width: 60%; ">
           
@@ -72,9 +64,15 @@
 
 
       </div>
-      <button>Download</button>
-      <button>Upload</button>
-    </body>
+      <ul class="nav navbar-nav">
 
+        <li><a class="btn" routerLink="document" routerLinkActive="active">Download</a></li>
+     </ul>
+      
+    </body>
+    
+    
     </section>
   </section>
+  <router-outlet></router-outlet>
+<!-- <app-document></app-document> -->

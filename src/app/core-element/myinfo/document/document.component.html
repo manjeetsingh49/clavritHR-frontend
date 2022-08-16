@@ -1,1 +1,63 @@
 <p>document works!</p>
+<h1>File Upload</h1>
+<app-user-sidebar></app-user-sidebar>
+<section id="main-content">
+  <section>
+      <div class="container">
+        <div class="table-title">
+          <div class="row">
+            <div class="container">
+              <h2>Clavrit <b>people</b></h2>
+            </div>
+            <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+            <p style="float: right;">
+
+              <a href="#addEmployeeModal" style="background-color:#24aee4; float: right;margin-inline-end: 165px;margin-top: 36px;" class="btn btn-success float-end" data-toggle="modal" data-backdrop="false"
+                data-target="#regModal"><i class="material-icons"></i> <span >Add New Employee</span></a>
+            </p> -->
+            <label class="btn btn-default">
+              <input type="file" (change)="selectFile($event)" />
+            </label>
+            <button class="btn btn-success" [disabled]="!selectedFiles" (click)="upload()">
+              Upload
+            </button>
+            <div class="alert alert-light" role="alert">{{ message }}</div>
+            <div class="card">
+              <div class="card-header">List of Files</div>
+              <ul
+                class="list-group list-group-flush"
+                *ngFor="let file of fileInfos | async"
+              >
+                <li class="list-group-item">
+                  <a href="{{ file.url }}">{{ file.name }}</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- <table class="table table-bordered table-striped">
+          <thead style="background-color:  #24aee4;">
+            <tr style="color: white;">
+              <th>Name</th>
+              <th>Surname</th>
+              <th>Joinig Date</th>
+              <th>Employment Status</th>
+              <th>Job Title</th>
+              <th>Department</th>
+              <th>Email</th>
+              <th>Address</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          
+                  
+                    
+             
+        </table> -->
+      </div>
+    </section>
+  </section>
+
+  

@@ -8,6 +8,7 @@ import { AboutComponent } from './core-element/about/about.component';
 import { PeopleComponent } from './core-element/people/people.component';
 import { MyInfoComponent } from './core-element/myinfo/myinfo.component';
 import { HiringComponent } from './core-element/hiring/hiring.component';
+import { DocumentComponent } from './core-element/myinfo/document/document.component';
 import { EmployeeprofileModalComponent } from './employeeprofile-modal/employeeprofile-modal.component';
 import { AttendenceReportComponent } from './attendence-report/attendence-report.component';
 
@@ -18,15 +19,20 @@ const routes: Routes = [
   { path: 'user-dashboard', component: UserDashboardComponent },
   { path: 'about', component: AboutComponent },
   { path: 'people', component: PeopleComponent },
-  { path: 'MyInfo', component: MyInfoComponent },
+  {
+    path: 'MyInfo',
+    children: [
+      { path : '', pathMatch:'full', component: MyInfoComponent},
+      { path: 'document', component: DocumentComponent },
+    ]
+  },
   { path: 'hiring', component: HiringComponent },
   { path : 'employee-profile', component:EmployeeprofileModalComponent},
   { path : 'attendence-report', component:AttendenceReportComponent}
-
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
