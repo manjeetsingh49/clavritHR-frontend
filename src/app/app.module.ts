@@ -12,12 +12,12 @@ import { DatePipe } from '@angular/common';
 import { NgxUiLoaderModule,NgxUiLoaderHttpModule}  from 'ngx-ui-loader';
 import { AttendenceReportComponent } from './attendence-report/attendence-report.component';
 import { NgModule } from '@angular/core';
+import { ExcelService } from './service/excel.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     AttendenceReportComponent
-    
     ],
   imports: [
     BrowserModule,
@@ -36,7 +36,7 @@ import { NgModule } from '@angular/core';
       }
     )
   ],
-  providers: [DatePipe],
+  providers: [DatePipe, ExcelService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

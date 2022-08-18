@@ -8,9 +8,7 @@
               <div class="row">
         <div class="container">
          <h2>Attendance Record</h2>
-
-         
-        </div>
+         </div>
               </div>
             </div>
         </div>
@@ -22,30 +20,46 @@
                
         <table>
             <tr style=>
-                <th style="padding: 10px; color: white; background-color:#1e97c6;"> From <span style="margin-left: 20px;"></span><input type="date">
+                <th style="padding: 10px; color: white; background-color:#1e97c6;"> From <span style="margin-left: 20px;"></span><input type="date" [(ngModel)]="from">
                     <span style="margin-left: 130px;"></span>
-                    <span> To <span style="margin-left: 10px;"></span><input type="date"></span>
+                    <span> To <span style="margin-left: 10px;"></span><input type="date" [(ngModel)]="to"></span>
                     <p style="float: right;">
-                        <button style="background-color: #24aee4;" type="button" class="btn btn-success float-end">Upload</button>
+                        <button style="background-color: #24aee4;" type="button" class="btn btn-success float-end" (click)="getData()">Submit</button>
                         <span style="margin-left: 20px;"></span>
                         <select style="background-color: #24aee4; color: white;" name="action" id="action"  class="btn btn-success float-end" >
                             <option  value="">Excel</option>
                             <option value="">PDF</option>
                           </select>
-
+                          <button style="background-color: #24aee4;" type="button" class="btn btn-success float-end"  (click)="exportAsXLSX()">Download</button>
                 </th>
             </tr> 
             </table>
-
-            <table class="table table-bordered table-striped">
+        <div [hidden]="displayTable == false">
+          <table class="table table-bordered table-striped" >
                 <thead style="background-color: #24aee4">
+                  <tr>
+                    <th colspan="4" style="text-align: center;color: white;font-weight: bold;font-size: larger;">From: {{from}} - To: {{to}}</th>
+                  </tr>
                   <tr style="color: white">
-                    <th>Date</th>
                     <th>PunchIn Date</th>
                     <th>PunchIn Time</th>
                     <th>PunchOut Date</th>
                     <th>PunchOut Time</th>
                   </tr>
                 </thead>
+                <tbody>
+                  
+                  <tr *ngFor="let punchDetails of data">
+                    <td>{{punchDetails.punchIn | date }}</td>
+                    <td>{{punchDetails.punchIn | date:'shortTime' }}</td>
+                    <td>{{punchDetails.punchOut | date }}</td>
+                    <td>{{punchDetails.punchOut | date:'shortTime' }}</td>
+                  </tr>
+
+                </tbody>
             </table>
         </div>
+        <div [hidden]="displayTable == true" class="table table-bordered table-striped" 
+        style="background-color:#24aee4; margin-top: 4%;padding: 2%;color: white;font-weight: bold;
+        width: 80%; align-content: center; text-align: center;">No Records Found</div>
+    </div>
