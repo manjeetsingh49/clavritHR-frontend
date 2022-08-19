@@ -21,6 +21,7 @@
         <table class="table table-bordered table-striped">
           <thead style="background-color:  #24aee4;">
             <tr style="color: white;">
+              <th>Emp Id</th>
               <th>Name</th>
               <th>Joinig Date</th>
               <th>Employment Status</th>
@@ -33,6 +34,7 @@
           </thead>
           <tbody>
             <tr *ngFor="let empProfile of this.globalService.empProfiles">
+              <td><span>{{empProfile.empMasterDetails!.id}}</span></td>
               <td><span>{{empProfile.empPersonalDetails!.name}}</span></td>
               <td><span>{{empProfile.empHrmsDetails!.doj | date}}</span></td>
               <td><span>{{empProfile.empMasterDetails!.active}}</span></td>

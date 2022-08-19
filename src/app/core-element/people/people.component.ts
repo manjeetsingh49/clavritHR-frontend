@@ -25,6 +25,8 @@ export class People {
 export class PeopleComponent implements OnInit {
 
   peoples: People[] = [];
+  authService: any;
+  eMasterDetails: any;
   //public empProfiles: EmployeeProfileDto[] = [];
   constructor(
     private httpClient: HttpClient, public globalService: GlobalService

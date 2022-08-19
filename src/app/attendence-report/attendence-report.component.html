@@ -24,13 +24,9 @@
                     <span style="margin-left: 130px;"></span>
                     <span> To <span style="margin-left: 10px;"></span><input type="date" [(ngModel)]="to"></span>
                     <p style="float: right;">
-                        <button style="background-color: #24aee4;" type="button" class="btn btn-success float-end" (click)="getData()">Submit</button>
+                        <button style="background-color: #24aee4;" type="button" class="btn btn-success float-end" (click)="getData()">Search</button>
                         <span style="margin-left: 20px;"></span>
-                        <select style="background-color: #24aee4; color: white;" name="action" id="action"  class="btn btn-success float-end" >
-                            <option  value="">Excel</option>
-                            <option value="">PDF</option>
-                          </select>
-                          <button style="background-color: #24aee4;" type="button" class="btn btn-success float-end"  (click)="exportAsXLSX()">Download</button>
+                        
                 </th>
             </tr> 
             </table>
@@ -38,9 +34,18 @@
           <table class="table table-bordered table-striped" >
                 <thead style="background-color: #24aee4">
                   <tr>
-                    <th colspan="4" style="text-align: center;color: white;font-weight: bold;font-size: larger;">From: {{from}} - To: {{to}}</th>
+                    <th colspan="5" style="text-align: center;color: white;font-weight: bold;font-size: larger;">From: {{from}} - To: {{to}}
+
+                      <span style="margin-left: 20px;"></span>
+                      <!--<select style="background-color: #24aee4; color: white;" name="action" id="action"  class="btn btn-success float-end" (onChange)="exportAsXLSX()">
+                        <option  value="">ExportoExcel</option>
+                        <option value="">PDF</option>
+                      </select>-->
+                      <button style="background-color: #24aee4;" type="button" class="btn btn-success float-end"  (click)="exportAsXLSX()">Export to Excel</button>
+                    </th>
                   </tr>
                   <tr style="color: white">
+                    <th>Employee Name</th>
                     <th>PunchIn Date</th>
                     <th>PunchIn Time</th>
                     <th>PunchOut Date</th>
@@ -48,8 +53,8 @@
                   </tr>
                 </thead>
                 <tbody>
-                  
                   <tr *ngFor="let punchDetails of data">
+                    <td>{{punchDetails.empName}}</td>
                     <td>{{punchDetails.punchIn | date }}</td>
                     <td>{{punchDetails.punchIn | date:'shortTime' }}</td>
                     <td>{{punchDetails.punchOut | date }}</td>

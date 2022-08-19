@@ -18,6 +18,8 @@ export class AttendenceReportComponent implements OnInit {
   public data: Array<punchIn> = [];
   public today: Date = new Date();
   public displayTable= false;
+  authService: any;
+  eMasterDetails: any;
   
 
   constructor(private reportService: ReportService, private excelService:ExcelService  ) { }
@@ -32,6 +34,7 @@ export class AttendenceReportComponent implements OnInit {
   }
 
   public getData() {
+  
     if (!this.from || !this.to) {
       alert("From date or to date missing")
       return;
@@ -41,8 +44,8 @@ export class AttendenceReportComponent implements OnInit {
       return;
     }
    this.reportService.getData(this.from, this.to, 1).subscribe(res=> {
-      this.data = res.data;
-      if(this.data.length>0) {
+      if(null !=res.data && res.data.length>0) {
+        this.data = res.data;
         this.displayTable = true;
       } else {
         this.displayTable = false;
@@ -65,6 +68,7 @@ export class AttendenceReportComponent implements OnInit {
       var punchOutDate =  pipe.transform(this.data[i].punchOut, "YYYY-MM-dd");
       var punchOutTime =  pipe.transform(this.data[i].punchOut, "shortTime");
       var record = {
+        "Name" : this.data[i].empName,
         "Punch In Date" : punchInDate,
         "Punch In Time" : punchInTime,
         "Punch Out Date" : punchOutDate,
