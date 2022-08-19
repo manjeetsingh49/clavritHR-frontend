@@ -33,7 +33,7 @@ export class EmployeeMasterDetails {
 	password:string="";
 }
 
-export class EmployeeRequestDto {
+export class EmployeeProfileDto {
     empPersonalDetails:EmployeePersonalDetail;
 	empHrmsDetails:EmployeeHrmsDetail;
 	empMasterDetails:EmployeeMasterDetails;

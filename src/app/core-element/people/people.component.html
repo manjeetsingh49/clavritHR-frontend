@@ -22,7 +22,6 @@
           <thead style="background-color:  #24aee4;">
             <tr style="color: white;">
               <th>Name</th>
-              <th>Surname</th>
               <th>Joinig Date</th>
               <th>Employment Status</th>
               <th>Job Title</th>
@@ -33,15 +32,14 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let people of peoples">
-              <td><span>{{people.name}}</span></td>
-              <td><span>{{people.surname}}</span></td>
-              <td><span>{{people.joining_date}}</span></td>
-              <td><span>{{people.emp_status}}</span></td>
-              <td><span>{{people.job_title}}</span></td>
-              <td><span>{{people.department}}</span></td>
-              <td><span>{{people.email}}</span></td>
-              <td><span>{{people.address}}</span></td>
+            <tr *ngFor="let empProfile of this.globalService.empProfiles">
+              <td><span>{{empProfile.empPersonalDetails!.name}}</span></td>
+              <td><span>{{empProfile.empHrmsDetails!.doj | date}}</span></td>
+              <td><span>{{empProfile.empMasterDetails!.active}}</span></td>
+              <td><span>{{empProfile.empMasterDetails!.role}}</span></td>
+              <td><span>{{empProfile.empHrmsDetails!.department}}</span></td>
+              <td><span>{{empProfile.empHrmsDetails!.email}}</span></td>
+              <td><span>{{empProfile.empPersonalDetails!.address}}</span></td>
               <td>
                  <!-- <a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
                 <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
@@ -104,7 +102,6 @@
             <input id="job_title" class="form-control" >
           </div>
         </div>
-        v
         <div class="form-group">
           <label for="department">Department</label>
           <div class="input-group">

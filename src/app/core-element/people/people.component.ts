@@ -1,41 +1,47 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { EmployeeProfileDto } from 'src/app/employeeprofile-modal/models/employe-profile-entity';
+import { GlobalService } from 'src/app/service/global.service';
 export class People {
   constructor(
-  public name: String,
-  public surname:String,
-  public joining_date: String,
-  public  emp_status: String,
-  public  job_title: String,
-  public  department: String,
-  public  email: String,
-  public address: String
-  
-  ){
+    public name: String,
+    public surname: String,
+    public joining_date: String,
+    public emp_status: String,
+    public job_title: String,
+    public department: String,
+    public email: String,
+    public address: String
+
+  ) {
   }
 }
 @Component({
   selector: 'app-people',
   templateUrl: './people.component.html',
-  styleUrls: ['./people.component.css']
+  styleUrls: ['./people.component.css'],
+  providers: [GlobalService]
 })
 export class PeopleComponent implements OnInit {
-  
+
   peoples: People[] = [];
-  constructor( 
-     private httpClient:HttpClient
+  //public empProfiles: EmployeeProfileDto[] = [];
+  constructor(
+    private httpClient: HttpClient, public globalService: GlobalService
   ) { }
 
   ngOnInit(): void {
     this.getPeople();
   }
-    getPeople(){
-      this.httpClient.get<any>('http://localhost:8080/getPeople').subscribe(Response=> {this.peoples=Response});
-    }
-    openDetails(){
-      alert("sachin")
-    }
+  getPeople() {
+    this.httpClient.get<any>('http://localhost:8080/employee-profile').subscribe(resp => {
+      this.globalService.saveEmployeeProfileResponseList(resp);
+    });
   }
+  openDetails() {
+    alert("sachin")
+  }
+}
 function http<T>(http: any) {
   throw new Error('Function not implemented.');
 }
