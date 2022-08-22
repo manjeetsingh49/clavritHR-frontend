@@ -5,6 +5,7 @@ export class punchIn {
 	public punchOut !: Date;
     public createdOn ! : Date;
     public udatedOn !: Date;
+    public empName !: string;
 
     constructor() {
        

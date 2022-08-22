@@ -25,11 +25,8 @@ export class PunchService {
     return this.http.get<any>(fullApiUrl);
   }
 
-  public getTodayAttendance(startDate:Date, endDate:Date){
-   let startDateF =this.getDateYMDFormat(startDate);
-   let endDateF = this.getDateYMDFormat(endDate);
-   console.log("startDateF: "+ startDateF);
-    const fullApiUrl = this.apiUrl + "/attendance/"+startDateF+"/"+endDateF;
+  public getTodayAttendance(emp_id: string){
+    const fullApiUrl = this.apiUrl + "/attendance/employee/"+emp_id;
     return this.http.get<any>(fullApiUrl);
   }
 

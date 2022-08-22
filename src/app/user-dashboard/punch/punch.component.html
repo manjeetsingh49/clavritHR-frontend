@@ -11,27 +11,28 @@
             <td>
                 <form>
                     <label style="font-size: 12px; display: block;" >Punch-in</label>
-                    <small *ngIf="todayAttendance.length"
-                        style="border: 1px; background: white; padding: 5px 8px; color: black"> {{punchInTime
+                    <small *ngIf="punchInClass!=null && punchInClass.punchIn"
+                        style="border: 1px; background: white; padding: 5px 8px; color: black"> {{punchInClass.punchIn
                         | date:'shortTime' }} </small>
-                    <small *ngIf="!todayAttendance.length" style="border: 1px; background: white; padding: 5px 17px; color: black"  >--:--</small>
+                    <small *ngIf="punchInClass == null || punchInClass.punchIn == null" style="border: 1px; background: white; padding: 5px 17px; color: black"  >--:--</small>
                 </form>
             </td>
             <td>
                 <form>
                     <label style="font-size: 12px; display: block;">Punch-out</label>
-                    <small  style="border: 1px; background: white; padding: 5px 8px; color: black">{{punchOutTime |
-                        date:'shortTime' }} </small>
-                        <small *ngIf="display" style="border: 1px; background: white; padding: 5px 17px; color: black"  >--:--</small>
+                    <small *ngIf="punchInClass!=null && punchInClass.punchOut"
+                    style="border: 1px; background: white; padding: 5px 8px; color: black"> {{punchInClass!.punchOut
+                    | date:'shortTime' }} </small>
+                <small *ngIf="punchInClass == null || punchInClass.punchOut == null" style="border: 1px; background: white; padding: 5px 17px; color: black"  >--:--</small>
             
                 </form>
             </td>
         </tr>
         <tr>
             <td colspan="2" style="padding: 8px;">
-                <button *ngIf="this.display" style="margin-top: 20px;" type="button" (click)="punchINandOut(true)"
+                <button *ngIf="punchInClass ==null || punchInClass.punchIn ==null" style="margin-top: 20px;" type="button" (click)="punchINandOut(true)"
                     class="btn btn-success btn-block">Punch-in</button>
-                <button [disabled] = "punchOutTime" *ngIf="!this.display" style="margin-top: 20px;" type="button" (click)="punchINandOut(false)"
+                <button [disabled] = "punchOutTime" *ngIf="punchInClass!=null && punchInClass.punchOut ==null" style="margin-top: 20px;" type="button" (click)="punchINandOut(false)"
                     class="btn btn-success btn-block">  Punch-out</button>
             </td>
 

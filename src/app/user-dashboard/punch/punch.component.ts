@@ -1,4 +1,4 @@
-import { DATE_PIPE_DEFAULT_TIMEZONE } from '@angular/common';
+import { DatePipe, DATE_PIPE_DEFAULT_TIMEZONE } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import {punchIn } from 'src/app/class/punchIn.class';
 import { AuthenticationService } from 'src/app/service/authentication.service';
@@ -17,57 +17,58 @@ export class PunchComponent implements OnInit {
   constructor(private punchService: PunchService ,private AuthenticationService: AuthenticationService) {
   }
 
-
   punchInTime: any;
   punchOutTime: any;
-  punchInClass: punchIn = new punchIn();
-  todayAttendance: Array<punchIn> = [];
-
+  punchInClass: punchIn | null = null;
+  todayAttendance: Array<punchIn | null> = [];
+  empId!: string;
   ngOnInit(): void {
+    this.empId =this.AuthenticationService.getData(this.AuthenticationService.TOKEN_KEY);
     this.getTodayAttendance();
   }
 
   punchINandOut(isPunchIn: boolean) {
+    
     if (isPunchIn) {
-       this.punchInTime = new Date();
-      this.punchInClass.empId =  this.AuthenticationService.getData(this.AuthenticationService.TOKEN_KEY);
-      this.toggle();
+      this.punchInClass = new punchIn();
+      this.punchInTime = new Date();
+      this.punchInClass.empId =  this.empId ;
       this.punchInClass.punchIn = new Date();
       this.punchInClass.createdOn = new Date();
       this.punchInTime = new Date();
+      this.savePunchInPunchOut(this.punchInClass);
     } else {
-      this.punchOutTime = new Date();
-      this.punchInClass.punchOut = new Date();
-      this.punchInClass.udatedOn = new Date();
-      console.log("in punch out condition:: " + this.punchInClass.punchOut);
-    }
-    this.todayAttendance.push(this.punchInClass);
-    this.punchService.punchInOut(this.punchInClass).subscribe(resp => {
-      console.log("punchIn: " + resp);
-    });
-
-  }
-
-  display = true;
-  toggle() {
-    this.display = !this.display
-  }
-  getTodayAttendance() {
-    let startDate = new Date();
-    startDate.setHours(0, 0, 0, 0);
-    let endDate = new Date(startDate.getTime() + 24 * 60 * 60 * 1000);
-    console.log("start Date: " + startDate + ", end Date: " + endDate);
-    this.punchService.getTodayAttendance(startDate, endDate).subscribe(resp => {
-      console.log(resp.data);
-      if (resp.data.length > 0) {
-        this.todayAttendance.push(resp.data);
-        this.punchInClass = resp.data[0];
-        console.log("this.punchIn: " + this.punchInClass.punchIn);
-        this.punchInTime = resp.data[0].punchIn;
-        this.punchOutTime = resp.data[0].punchOut;
-        this.display = false;
+      if(this.punchInClass != null) {
+        this.punchOutTime = new Date();
+        this.punchInClass.punchOut = new Date();
+        this.punchInClass.udatedOn = new Date();
+        console.log("in punch out condition:: " + this.punchInClass.punchOut);
+        this.savePunchInPunchOut(this.punchInClass);
+      } else {
+        alert("Puch out with punch in is not allowed");
       }
+    }
+  }
 
+  public dateDiffInDay(inTime: Date, outTime: Date): number {   
+    let diff = outTime.getTime() -  inTime.getTime();
+    return diff / (1000 * 3600 * 24);
+  }
+
+  savePunchInPunchOut(punchInOut: punchIn) {
+    this.punchService.punchInOut(punchInOut).subscribe(resp => {
+      this.getTodayAttendance();
+    });
+  }
+
+  getTodayAttendance() {
+    this.punchService.getTodayAttendance(this.empId).subscribe(resp => {
+      console.log(resp.data);
+      if (resp.data && resp.code == 200) {
+        this.punchInClass = resp.data;
+      } else if(resp.code == 204) {
+        this.punchInClass = null;
+      }
     });
   }
 }
