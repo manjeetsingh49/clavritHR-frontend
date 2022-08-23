@@ -14,7 +14,7 @@ export class ReportService {
     return this.http.post<any>('http://localhost:8080/attendance/upload', body);
   }
 
-  public getData(fromDate: string, toDate: string, emp_id: number): Observable<any> {
+  public getData(fromDate: string, toDate: string, emp_id?: string): Observable<any> {
     return this.http.get("http://localhost:8080/attendance/"+fromDate+"/"+toDate+"?empId="+emp_id);
   }
 }

@@ -24,28 +24,33 @@
                     <span style="margin-left: 130px;"></span>
                     <span> To <span style="margin-left: 10px;"></span><input type="date" [(ngModel)]="to"></span>
                     <p style="float: right;">
+                      <span *ngIf="(data.length > 0) || (displayTable!=null && displayTable == false && data.length==0)">
+                        <button style="background-color: #24aee4;" type="button" class="btn btn-success float-end" (click)="reset()">Reset</button>
+                        <span style="margin-left: 20px;"></span>
+                      </span>
                         <button style="background-color: #24aee4;" type="button" class="btn btn-success float-end" (click)="getData()">Search</button>
                         <span style="margin-left: 20px;"></span>
-                        
+                    </p> 
                 </th>
             </tr> 
             </table>
-        <div [hidden]="displayTable == false">
+        <div *ngIf="data.length > 0">
           <table class="table table-bordered table-striped" >
                 <thead style="background-color: #24aee4">
-                  <tr>
-                    <th colspan="5" style="text-align: center;color: white;font-weight: bold;font-size: larger;">From: {{from}} - To: {{to}}
-
-                      <span style="margin-left: 20px;"></span>
-                      <!--<select style="background-color: #24aee4; color: white;" name="action" id="action"  class="btn btn-success float-end" (onChange)="exportAsXLSX()">
-                        <option  value="">ExportoExcel</option>
-                        <option value="">PDF</option>
-                      </select>-->
-                      <button style="background-color: #24aee4;" type="button" class="btn btn-success float-end"  (click)="exportAsXLSX()">Export to Excel</button>
+                  <tr style="text-align: center; color: white;font-weight: bold;font-size: larger;">
+                    <th style="border: 0px; text-align: right;">
+                     <span> {{empName}} :</span>
+                     </th>
+                     <th colspan="2" style="border: 0px;text-align: left;">
+                      <span>
+                        From: {{from}} - To: {{to}}
+                      </span>
+                     </th>
+                     <th  style="border: 0px;text-align: center;">
+                      <button style="float: right; background-color: #24aee4;" type="button" class="btn btn-success float-end"  (click)="exportAsXLSX()">Export to Excel</button>
                     </th>
                   </tr>
                   <tr style="color: white">
-                    <th>Employee Name</th>
                     <th>PunchIn Date</th>
                     <th>PunchIn Time</th>
                     <th>PunchOut Date</th>
@@ -54,7 +59,7 @@
                 </thead>
                 <tbody>
                   <tr *ngFor="let punchDetails of data">
-                    <td>{{punchDetails.empName}}</td>
+                   <!-- <td>{{punchDetails.empName}}</td>-->
                     <td>{{punchDetails.punchIn | date }}</td>
                     <td>{{punchDetails.punchIn | date:'shortTime' }}</td>
                     <td>{{punchDetails.punchOut | date }}</td>
@@ -64,7 +69,7 @@
                 </tbody>
             </table>
         </div>
-        <div [hidden]="displayTable == true" class="table table-bordered table-striped" 
+        <div *ngIf="displayTable!=null && displayTable == false && data.length==0" class="table table-bordered table-striped" 
         style="background-color:#24aee4; margin-top: 4%;padding: 2%;color: white;font-weight: bold;
         width: 80%; align-content: center; text-align: center;">No Records Found</div>
     </div>
