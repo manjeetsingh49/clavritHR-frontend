@@ -31,7 +31,7 @@ import { ExcelService } from './service/excel.service';
     NgxUiLoaderHttpModule.forRoot (
       { 
         showForeground: true, 
-        maxTime: 300, 
+        maxTime: 30000, 
         minTime: 10 
       }
     )
