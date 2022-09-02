@@ -27,6 +27,11 @@ export class DocumentComponent  implements OnInit {
   upload() {
     this.progress = 0;
     this.currentFile = this.selectedFiles?.item(0) as File;
+    var reader = new FileReader();
+    console.log(reader.result?.toString());
+    reader.readAsDataURL(this.currentFile);
+    console.log(reader.result?.toString());
+  
     this.uploadService.upload(this.currentFile).subscribe(
       event => {
         if (event.type === HttpEventType.UploadProgress) {

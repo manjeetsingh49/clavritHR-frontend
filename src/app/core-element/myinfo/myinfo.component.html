@@ -11,8 +11,16 @@
       
       </div>
       <body>
+        <ul class="nav navbar-nav">
+
+          <li style="margin-top: -60px;"><a class="btn" routerLink="document" routerLinkActive="active">Document</a></li>
+          <li style="margin-top: -60px;margin-left: 359px;"><a class="btn" routerLink="document" routerLinkActive="active">Personal</a></li>
+          <li style="margin-top: -60px;margin-left: 297px;"><a class="btn" routerLink="document" routerLinkActive="active">Job</a></li>
+          <li style="margin-top: -60px;margin-left: 199px;"><a class="btn" routerLink="document" routerLinkActive="active">TimeOff</a></li>
+          <li style="margin-top: -60px;margin-left: 105px;"><a class="btn" routerLink="document" routerLinkActive="active">Benefits</a></li>
+        </ul>
        
-      <h1 style="margin-left: 58px;background-color:#24aee4;color: white;"><b>Basic Information</b></h1>
+      <h1 style="margin-left: 58px;background-color:#24aee4;color: white;margin-top: 40px"><b>Basic Information</b></h1>
       <div   *ngFor="let myinfo of myinfo" style= " margin: 59px; width: 60%; ">
           
         
@@ -64,10 +72,6 @@
 
 
       </div>
-      <ul class="nav navbar-nav">
-
-        <li><a class="btn" routerLink="document" routerLinkActive="active">Download</a></li>
-     </ul>
       
     </body>
     
