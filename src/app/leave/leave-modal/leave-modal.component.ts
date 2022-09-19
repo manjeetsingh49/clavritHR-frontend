@@ -51,7 +51,7 @@ export class LeaveModalComponent implements OnInit {
       var code = resp.code;
       this.response = resp;
       console.log("code : " + code)
-      alert("Successfully submitted");
+      alert(this.response.message)
     });
   }
 
