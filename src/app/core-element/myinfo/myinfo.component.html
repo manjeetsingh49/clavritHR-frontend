@@ -21,7 +21,7 @@
         </ul>
        
       <h1 style="margin-left: 58px;background-color:#24aee4;color: white;margin-top: 40px"><b>Basic Information</b></h1>
-      <div   *ngFor="let myinfo of myinfo" style= " margin: 59px; width: 60%; ">
+      <div  style= " margin: 59px; width: 60%; ">
           
         
  
@@ -45,27 +45,27 @@
       </style>
     <tr>
       <td style="background-color:#24aee4;color: white;"><b>Employe Name</b></td>
-      <td>{{myinfo.name}}</td>
+      <td>{{myinfo!.name}}</td>
       
     </tr>
     <tr>
       <td style="background-color:#24aee4;color: white;"><b>Address</b></td>
-      <td>{{myinfo.address}}</td>
+      <td>{{myinfo!.address}}</td>
       
     </tr>
     <tr>
       <td style="background-color: #24aee4;color: white;"><b>Email Id</b></td>
-      <td>{{myinfo.emp_mail}}</td>
+      <td>{{myinfo!.emp_mail}}</td>
       
     </tr>
     <tr>
       <td style="background-color:#24aee4;color: white;"><b>Joining Date</b></td>
-      <td>{{myinfo.joining_date}}</td>
+      <td>{{myinfo!.joining_date}}</td>
       
     </tr>
     <tr>
       <td style="background-color: #24aee4;color: white;"><b>Mobile No.</b></td>
-      <td>{{myinfo.phone_num}}</td>
+      <td>{{myinfo!.phone_num}}</td>
       
    
   </table>
