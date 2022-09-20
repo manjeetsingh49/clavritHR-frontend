@@ -2,12 +2,12 @@ export class EmployeePersonalDetail  {
     name: string;
     surname: string="";
     gender: string;
-    age: number;
+    age: number | null = null;
     address: string;
     other_field_1: string;
     other_field_2: string;
 
-    constructor(name: string, surname: string, gender: string, age: number, address: string, other_field_1: string, other_field_2: string) {
+    constructor(name: string, surname: string, gender: string, age: number | null, address: string, other_field_1: string, other_field_2: string) {
      this.name = name + surname;
      this.gender = gender;
      this.age = age;
@@ -21,7 +21,7 @@ export class EmployeePersonalDetail  {
 export class EmployeeHrmsDetail {
     email:string="";
 	department:string="";
-	doj:Date = new Date();
+	doj?:Date | null = null;
 	sick_leaves?:number
 };
 

@@ -14,9 +14,10 @@ import { GlobalService } from '../service/global.service';
 })
 export class EmployeeprofileModalComponent implements OnInit {
   public role: any;
-  public ePersonalDetails: EmployeePersonalDetail = new EmployeePersonalDetail("", "", "", 18, "", "", "");
+  public ePersonalDetails: EmployeePersonalDetail = new EmployeePersonalDetail("", "", "", null, "", "", "");
   public eHrmsDetails: EmployeeHrmsDetail = new EmployeeHrmsDetail;
   public eMasterDetails: EmployeeMasterDetails = new EmployeeMasterDetails;
+  public isModalShow: boolean = false;
 
   constructor(private empService: EmployeeService, private authService: AuthenticationService, private globalService: GlobalService) { }
 
@@ -29,21 +30,35 @@ export class EmployeeprofileModalComponent implements OnInit {
     console.log("MASTER click " + JSON.stringify(this.eMasterDetails));
     this.eMasterDetails.id = this.authService.getData(this.authService.TOKEN_KEY);
     let body = new EmployeeProfileDto(this.ePersonalDetails, this.eHrmsDetails, this.eMasterDetails);
+    if(isValidRequest(body)) {
     this.empService.sendEmployeeDetails(body).subscribe(resp => {
       console.log(resp);
       alert(resp.message);
       if (resp.code == 200) {
         this.globalService.appendToEmployeeProfileList(body);
-        this.ePersonalDetails = new EmployeePersonalDetail("", "", "", 18, "", "", "");
+        this.ePersonalDetails = new EmployeePersonalDetail("", "", "", 18 , "", "", "");
         this.eHrmsDetails = new EmployeeHrmsDetail;
         this.eMasterDetails = new EmployeeMasterDetails;
+        this.isModalShow = true;
       }
     },
       error => {
         console.log(error);
         alert(error.error.message);
-      })
-
-  }
-
+      });
+    }
 }
+   } 
+
+//constructor(empPersonalDetails:EmployeePersonalDetail, empHrmsDetails:EmployeeHrmsDetail, empMasterDetails:EmployeeMasterDetails)
+function isValidRequest(body: any): boolean {
+  if(body.empPersonalDetails.age! < 18) {
+    alert("Allowed minimum age is 18");
+    return false;
+  } else  if(body.empPersonalDetails.age! > 55) {
+    alert("Allowed maximum age is 55");
+    return false;
+  }
+  return true;
+}
+

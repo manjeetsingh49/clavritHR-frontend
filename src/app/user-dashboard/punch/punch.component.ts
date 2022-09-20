@@ -2,6 +2,7 @@ import { DatePipe, DATE_PIPE_DEFAULT_TIMEZONE } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import {punchIn } from 'src/app/class/punchIn.class';
 import { AuthenticationService } from 'src/app/service/authentication.service';
+import { LeaveService } from 'src/app/service/leave.service';
 import { PunchService } from 'src/app/service/punch.service';
 
 
@@ -14,7 +15,7 @@ export class PunchComponent implements OnInit {
   authService: any;
 
 
-  constructor(private punchService: PunchService ,private AuthenticationService: AuthenticationService) {
+  constructor(private punchService: PunchService ,private AuthenticationService: AuthenticationService, private leaveService: LeaveService) {
   }
 
   punchInTime: any;
@@ -22,9 +23,12 @@ export class PunchComponent implements OnInit {
   punchInClass: punchIn | null = null;
   todayAttendance: Array<punchIn | null> = [];
   empId!: string;
+  totalLeaves: number = 0;
+  leavesLeft: number = 0;
   ngOnInit(): void {
     this.empId =this.AuthenticationService.getData(this.AuthenticationService.TOKEN_KEY);
     this.getTodayAttendance();
+    this.getLeaveDetails();
   }
 
   punchINandOut(isPunchIn: boolean) {
@@ -66,6 +70,18 @@ export class PunchComponent implements OnInit {
       console.log(resp.data);
       if (resp.data && resp.code == 200) {
         this.punchInClass = resp.data;
+      } else if(resp.code == 204) {
+        this.punchInClass = null;
+      }
+    });
+  }
+
+  getLeaveDetails() {
+    this.leaveService.getLeaveDetails(this.empId).subscribe(resp => {
+      console.log(resp.data);
+      if (resp.data && resp.code == 200) {
+        this.totalLeaves = resp.data.totalLeaves;
+        this.leavesLeft = resp.data.leavesLeft
       } else if(resp.code == 204) {
         this.punchInClass = null;
       }

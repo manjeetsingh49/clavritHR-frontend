@@ -34,7 +34,6 @@ export class AttendenceReportComponent implements OnInit {
     // this.from ="";
     // this.getData();
   }
-
   public reset() {
    this.to = "";
    this.from = ""
@@ -46,11 +45,11 @@ export class AttendenceReportComponent implements OnInit {
   public getData() {
   
     if (!this.from || !this.to) {
-      alert("From date or to date missing")
+      // alert("From date or to date missing")
       return;
     }
     if(new Date(this.from) > new Date(this.to)) {
-      alert("From date cannot be greater than to date");
+      // alert("From date cannot be greater than to date");
       return;
     }
    this.reportService.getData(this.from, this.to, this.empId).subscribe(res=> {
@@ -69,11 +68,11 @@ export class AttendenceReportComponent implements OnInit {
   public exportAsXLSX():void{
 
     if (!this.from || !this.to) {
-      alert("Testing")
+      // alert("Testing")
       return;
     }
     var pipe = new DatePipe('en-US');
-    var fileName = "From_"+this.from + "_To_" + this.to + "-" +  pipe.transform(this.today, "YYYY-MM-dd");
+    var fileName = this.empName +" : " + "From_"+this.from + "_To_" + this.to + "-" +  pipe.transform(this.today, "YYYY-MM-dd");
     var jsondata = [];
     for(var i=0; i< this.data.length; i++) {
       var punchInDate =  pipe.transform(this.data[i].punchIn, "YYYY-MM-dd");

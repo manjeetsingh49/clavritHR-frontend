@@ -8,6 +8,10 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class LeaveService {
+  
+  public getLeaveDetails(empId: string): Observable<any> {
+    return this.http.get<any>('http://localhost:8080/'+empId+'/leave-details');
+  }
 
   constructor(private http: HttpClient) { }
 

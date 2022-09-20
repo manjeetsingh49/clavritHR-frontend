@@ -59,7 +59,7 @@ export class LeaveModalComponent implements OnInit {
     if(this.to && this.from) {
       let toDt = new Date(this.to);
       let frDt = new Date(this.from);
-      this.diffDays = toDt.getDate() - frDt.getDate();
+      this.diffDays = toDt.getDate() - frDt.getDate() + 1;
       this.dtErr = "";
     } else {
       this.dtErr = "Please select both the dates";
