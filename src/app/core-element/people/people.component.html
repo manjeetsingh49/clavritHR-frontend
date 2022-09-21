@@ -21,7 +21,7 @@
         <table class="table table-bordered table-striped">
           <thead style="background-color:  #24aee4;">
             <tr style="color: white;">
-              <th>Emp Id</th>
+              <!-- <th>Emp Id</th> -->
               <th>Name</th>
               <th>Joinig Date</th>
               <th>Status</th>
@@ -34,7 +34,7 @@
           </thead>
           <tbody>
             <tr *ngFor="let empProfile of this.globalService.empProfiles">
-              <td><span>{{empProfile.empMasterDetails!.id}}</span></td>
+              <!-- <td><span>{{empProfile.empMasterDetails!.id}}</span></td> -->
               <td><span>{{empProfile.empPersonalDetails!.name}}</span></td>
               <td><span>{{empProfile.empHrmsDetails!.doj | date}}</span></td>
               <td><span>{{empProfile.empMasterDetails!.active}}</span></td>
@@ -45,14 +45,15 @@
               <td>
                  <!-- <a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
                 <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i
-                    class="material-icons">&#xE872;</i></a> -->
+                
                     <!-- <button class="btn btn-sm btn-info" (click)="openDetails()">
                       <i class="fa fa-search"></i>Details</button>
                     <button class="btn btn-sm btn-warning">
                       <i class="fa fa-edit"></i>Edit</button> -->
-                    <button class="btn btn-sm btn-danger" (click)="deletePeople(empProfile.empMasterDetails!.id)">
-                      <i class="fa fa-remove"></i>Delete</button>
+                    <!-- <button class="btn btn-sm btn-danger" (click)="deletePeople(empProfile.empMasterDetails!.id)">
+                      <i class="fa fa-remove"></i>Delete</button> -->
+                      <a style="cursor:pointer;" class="delete" title="Delete" data-toggle="tooltip" (click)="deletePeople(empProfile.empMasterDetails!.id)"><i
+                        class="material-icons">&#xE872;</i></a> 
                     
               </td>
             </tr>
