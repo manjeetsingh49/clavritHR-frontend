@@ -2,20 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { EmployeeProfileDto } from 'src/app/employeeprofile-modal/models/employe-profile-entity';
 import { GlobalService } from 'src/app/service/global.service';
-export class People {
-  constructor(
-    public name: String,
-    public surname: String,
-    public joining_date: String,
-    public emp_status: String,
-    public job_title: String,
-    public department: String,
-    public email: String,
-    public address: String
+import { PeopleService } from 'src/app/service/people.service';
 
-  ) {
-  }
-}
 @Component({
   selector: 'app-people',
   templateUrl: './people.component.html',
@@ -24,36 +12,41 @@ export class People {
 })
 export class PeopleComponent implements OnInit {
 
-  peoples: People[] = [];
   authService: any;
   eMasterDetails: any;
-  //public empProfiles: EmployeeProfileDto[] = [];
+  public empProfiles: EmployeeProfileDto[] = [];
   constructor(
-    private httpClient: HttpClient, public globalService: GlobalService
+    private httpClient: HttpClient, public globalService: GlobalService,
+    private peopleData:PeopleService,
   ) { }
 
   ngOnInit(): void {
     this.getPeople();
   }
   getPeople() {
-    this.httpClient.get<any>('http://localhost:8080/employee-profile').subscribe(resp => {
-    this.globalService.saveEmployeeProfileResponseList(resp);
-    });
+    this.peopleData.getEmployee().subscribe((resp)=>{
+     this.globalService.saveEmployeeProfileResponseList(resp);
+    },
+    (err)=>{
+      console.log(err);
+    }
+    );
   }
   openDetails() {
     alert("sachin")
   }
-
-  delete(empId: string | undefined) {
+  deletePeople(empId:string|undefined) {
     if (!empId) {
       alert("Invalid emp");
       return;
     }
-    this.httpClient.get<any>('http://localhost:8080/delete_employee/'+empId,).subscribe(resp => {
-      this.getPeople();
-    });
+      this.peopleData.deleteEmployee(empId).subscribe( data => {
+        console.log(data);
+        this.getPeople();
+      })
+      
+    }
   }
-}
 function http<T>(http: any) {
   throw new Error('Function not implemented.');
 }

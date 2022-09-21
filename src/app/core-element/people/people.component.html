@@ -24,7 +24,7 @@
               <th>Emp Id</th>
               <th>Name</th>
               <th>Joinig Date</th>
-              <th>Employment Status</th>
+              <th>Status</th>
               <th>Job Title</th>
               <th>Department</th>
               <th>Email</th>
@@ -47,11 +47,11 @@
                 <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
                 <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i
                     class="material-icons">&#xE872;</i></a> -->
-                    <button class="btn btn-sm btn-info" (click)="openDetails()">
+                    <!-- <button class="btn btn-sm btn-info" (click)="openDetails()">
                       <i class="fa fa-search"></i>Details</button>
                     <button class="btn btn-sm btn-warning">
-                      <i class="fa fa-edit"></i>Edit</button>
-                    <button class="btn btn-sm btn-danger" (click)="delete(empProfile.empMasterDetails!.id)">
+                      <i class="fa fa-edit"></i>Edit</button> -->
+                    <button class="btn btn-sm btn-danger" (click)="deletePeople(empProfile.empMasterDetails!.id)">
                       <i class="fa fa-remove"></i>Delete</button>
                     
               </td>
