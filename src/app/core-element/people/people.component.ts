@@ -43,6 +43,16 @@ export class PeopleComponent implements OnInit {
   openDetails() {
     alert("sachin")
   }
+
+  delete(empId: string | undefined) {
+    if (!empId) {
+      alert("Invalid emp");
+      return;
+    }
+    this.httpClient.post<any>('http://localhost:8080/employee-profile/remove/'+empId, null).subscribe(resp => {
+      this.getPeople();
+    });
+  }
 }
 function http<T>(http: any) {
   throw new Error('Function not implemented.');
