@@ -13,6 +13,6 @@ export class AboutComponent implements OnInit {
 
   scroll(el: HTMLElement) {
    // el.scrollIntoView();
-   el.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+   el.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
   } 
 }

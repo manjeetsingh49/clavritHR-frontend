@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import { AuthenticationService } from 'src/app/service/authentication.service';
+import { punchIn } from 'src/app/class/punchIn.class';
+import { getLocaleDateFormat } from '@angular/common';
 @Component({
   selector: 'app-user-sidebar',
   templateUrl: './user-sidebar.component.html',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserSidebarComponent implements OnInit {
 
-  constructor() { }
+  empId!: any;
+  empName: string = "";
+  // punchIn punch = new punchIn();
+  constructor( public auth: AuthenticationService ) {  }
 
-  ngOnInit(): void {
+  ngOnInit(): void  {
+    this.empId =this.auth.getData(this.auth.TOKEN_KEY);
   }
+  getData(){
+    
+    
 
+  }
 }

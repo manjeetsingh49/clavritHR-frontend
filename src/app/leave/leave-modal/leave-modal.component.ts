@@ -28,6 +28,7 @@ export class LeaveModalComponent implements OnInit {
 
   constructor(private leaveService: LeaveService, private authService: AuthenticationService) { }
   ngOnInit(): void {
+    
   }
 
   sendRequest() {
@@ -51,7 +52,8 @@ export class LeaveModalComponent implements OnInit {
       var code = resp.code;
       this.response = resp;
       console.log("code : " + code)
-      alert(this.response.message)
+      window.location.reload();
+      //alert(this.response.message)
     });
   }
 

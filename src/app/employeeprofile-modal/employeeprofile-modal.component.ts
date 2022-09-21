@@ -33,13 +33,14 @@ export class EmployeeprofileModalComponent implements OnInit {
     if(isValidRequest(body)) {
     this.empService.sendEmployeeDetails(body).subscribe(resp => {
       console.log(resp);
-      alert(resp.message);
+     // alert(resp.message);
       if (resp.code == 200) {
         this.globalService.appendToEmployeeProfileList(body);
         this.ePersonalDetails = new EmployeePersonalDetail("", "", "", 18 , "", "", "");
         this.eHrmsDetails = new EmployeeHrmsDetail;
         this.eMasterDetails = new EmployeeMasterDetails;
         this.isModalShow = true;
+        window.location.reload();
       }
     },
       error => {

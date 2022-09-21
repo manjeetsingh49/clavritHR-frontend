@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UploadFileService } from 'src/app/service/upload-file.service';
 import { HttpEventType, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FilesUpload } from 'src/app/class/FilesUpload';
 
 @Component({
   selector: 'app-document',
@@ -14,11 +15,13 @@ export class DocumentComponent  implements OnInit {
   currentFile: File | undefined;
   progress = 0;
   message = '';
+  files:  FilesUpload[] = [];
   fileInfos!: Observable<any>;
   constructor(private uploadService: UploadFileService) { }
   
   ngOnInit() {
     this.fileInfos = this.uploadService.getFiles();
+    this.getUserDocuments();
   } 
   selectFile(event : any) {
     this.selectedFiles = event.target.files;
@@ -36,9 +39,10 @@ export class DocumentComponent  implements OnInit {
       event => {
         if (event.type === HttpEventType.UploadProgress) {
           // this.progress = Math.round(100 * event.loaded / event.total);
+          this.getUserDocuments();
         } else if (event instanceof HttpResponse) {
           this.message = event.body.message;
-          this.fileInfos = this.uploadService.getFiles();
+          this.getUserDocuments();
         }
       },
       err => {
@@ -47,6 +51,13 @@ export class DocumentComponent  implements OnInit {
         this.currentFile = undefined;
       });
     this.selectedFiles  = undefined;
+  }
+
+  getUserDocuments(){
+    this.uploadService.getFiles().subscribe(resp=>{
+         console.log("All Documents"+ resp);
+        this.files = resp;
+    });
   }
 
 }

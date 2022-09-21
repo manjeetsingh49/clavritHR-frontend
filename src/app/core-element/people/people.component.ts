@@ -37,7 +37,7 @@ export class PeopleComponent implements OnInit {
   }
   getPeople() {
     this.httpClient.get<any>('http://localhost:8080/employee-profile').subscribe(resp => {
-      this.globalService.saveEmployeeProfileResponseList(resp);
+    this.globalService.saveEmployeeProfileResponseList(resp);
     });
   }
   openDetails() {
@@ -49,7 +49,7 @@ export class PeopleComponent implements OnInit {
       alert("Invalid emp");
       return;
     }
-    this.httpClient.post<any>('http://localhost:8080/employee-profile/remove/'+empId, null).subscribe(resp => {
+    this.httpClient.get<any>('http://localhost:8080/delete_employee/'+empId,).subscribe(resp => {
       this.getPeople();
     });
   }

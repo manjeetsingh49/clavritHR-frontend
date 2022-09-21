@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { EmployeeProfileDto } from '../employeeprofile-modal/models/employe-profile-entity';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +8,7 @@ import { EmployeeProfileDto } from '../employeeprofile-modal/models/employe-prof
 export class GlobalService {
   public empProfiles: EmployeeProfileDto[] = [];
   public key: string = "EmployeeList"
-  constructor() { 
+  constructor(private httpClient: HttpClient,) { 
   }
 
   public saveEmployeeProfileResponseList(response:any[]) {
@@ -15,6 +16,13 @@ export class GlobalService {
     this.empProfiles = response;
     return this.empProfiles;
   }
+
+  getPeople() {
+    this.httpClient.get<any>('http://localhost:8080/employee-profile').subscribe(resp => {
+    this.saveEmployeeProfileResponseList(resp);
+    });
+  }
+
 
   public appendToEmployeeProfileList(item: any){
     var response :any = localStorage.getItem(this.key);
