@@ -11,15 +11,15 @@ export class UserSidebarComponent implements OnInit {
 
   empId!: any;
   empName: string = "";
-  // punchIn punch = new punchIn();
+   punch:punchIn = new punchIn();
   constructor( public auth: AuthenticationService ) {  }
 
   ngOnInit(): void  {
     this.empId =this.auth.getData(this.auth.TOKEN_KEY);
+    this.empName = this.punch.empName
+   console.log( this.punch.empName + this.empId)
   }
   getData(){
     
-    
-
   }
 }

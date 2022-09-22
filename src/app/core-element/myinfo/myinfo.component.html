@@ -1,78 +1,22 @@
 <app-user-sidebar></app-user-sidebar>
 <section id="main-content">
-    <section  class="wrapper">
-  
+    <section style="background-color:#24aee4;"  class="wrapper">
+   
 
       <head>
           <title>My Info</title>
 
       </head>
-      <div class="horizontal-menu navbar-collapse collapse">
-      
-      </div>
-      <body>
+      <div  style="margin-top: 43px; " class="horizontal-menu navbar-collapse collapse">
         <ul class="nav navbar-nav">
 
-          <li style="margin-top: -60px;margin-left: 359px;"><a class="btn" routerLink="document" routerLinkActive="active">Personal</a></li>
-          <li style="margin-top: -60px;"><a class="btn" routerLink="document" routerLinkActive="active">Document</a></li>
           
-          <li style="margin-top: -60px;margin-left: 297px;"><a class="btn" routerLink="document" routerLinkActive="active">Job</a></li>
-          <li style="margin-top: -60px;margin-left: 199px;"><a class="btn" routerLink="document" routerLinkActive="active">TimeOff</a></li>
-          <li style="margin-top: -60px;margin-left: 105px;"><a class="btn" routerLink="document" routerLinkActive="active">Benefits</a></li>
+          <li  style="margin-top: 10px;"><a style="color: white;" class="btn" [routerLink]="['/MyInfo/document']" routerLinkActive="active">Document</a></li>
+          <li style="margin-top: 10px;margin-left: 10px;"><a style="color: white;" class="btn" [routerLink]="['/MyInfo/personal']" routerLinkActive="active">Personal</a></li>
         </ul>
-       
-      <h1 style="margin-left: 58px;background-color:#24aee4;color: white;margin-top: 40px"><b>Basic Information</b></h1>
-      <div  style= " margin: 59px; width: 60%; ">
-          
-        
- 
-  <table>
-    <style>
-      table {
-        font-family: arial, sans-serif;
-        border-collapse: collapse;
-        width: 100%;
-      }
-      
-      td, th {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-      }
-      
-      tr:nth-child(even) {
-        background-color: #dddddd;
-      }
-      </style>
-    <tr>
-      <td style="background-color:#24aee4;color: white;"><b>Employe Name</b></td>
-      <td>{{myinfo!.name}}</td>
-      
-    </tr>
-    <tr>
-      <td style="background-color:#24aee4;color: white;"><b>Address</b></td>
-      <td>{{myinfo!.address}}</td>
-      
-    </tr>
-    <tr>
-      <td style="background-color: #24aee4;color: white;"><b>Email Id</b></td>
-      <td>{{myinfo!.emp_mail}}</td>
-      
-    </tr>
-    <tr>
-      <td style="background-color:#24aee4;color: white;"><b>Joining Date</b></td>
-      <td>{{myinfo!.joining_date}}</td>
-      
-    </tr>
-    <tr>
-      <td style="background-color: #24aee4;color: white;"><b>Mobile No.</b></td>
-      <td>{{myinfo!.phone_num}}</td>
-      
-   
-  </table>
-
-
       </div>
+      <body>
+        
       
     </body>
     

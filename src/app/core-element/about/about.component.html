@@ -11,17 +11,20 @@
             class="horizontal-menu navbar-fixed-top">
             <!--  notification start -->
             <ul class="nav navbar-nav">
-                <li><a style="color: white; cursor: pointer; " mat-button (click)="scroll(ourTech)"
-                        routerLinkActive="active">OurTechnologies</a></li>
+                <li><a style="color: white; cursor: pointer; " mat-button (click)="scroll(AboutUs)"
+                        routerLinkActive="active">About Us</a>
+                </li>
                 <li><a style="color: white;" mat-button (click)="scroll(career)" routerLink="people"
                         routerLinkActive="active">Careers</a>
                 </li>
                 <li><a style="color: white; cursor: pointer; " mat-button (click)="scroll(contactUs)"
                         routerLinkActive="active">Contact Us</a>
                 </li>
-                <li><a style="color: white; cursor: pointer; " mat-button (click)="scroll(AboutUs)"
-                        routerLinkActive="active">About Us</a>
-                </li>
+                <li><a style="color: white; cursor: pointer; " mat-button (click)="scroll(ourTech)"
+                        routerLinkActive="active">OurTechnologies</a></li>
+
+
+
                 <li><a style="color: white; cursor: pointer; " mat-button (click)="scroll(ourTeam)"
                         routerLinkActive="active">Our Team</a>
                 </li>
@@ -81,7 +84,7 @@
                                         <div style="text-align: center;">Why Clavrit Digital Solutions Pvt Ltd
                                         </div>
                                     </h2>
-                                    <div #career class="viamagus-paragraph">
+                                    <div class="viamagus-paragraph">
                                         <div style="text-align: center;">Our capabilities in Machine Learning
                                             and Artificial
                                             Intelligence give us a competitive edge in this exclusive domain. We
@@ -99,7 +102,7 @@
                                 </div>
                             </div>
 
-                            <div style="clear: both;"></div>
+                            <div  style="clear: both;"></div>
                         </div>
 
                     </div>
@@ -108,7 +111,7 @@
                 <div class="clearfix"></div>
             </div>
             <div>
-                <h1 style="margin-top:50px; text-align: center; ">Careers</h1>
+                <h1 #career style="margin-top:50px; text-align: center; ">Careers</h1>
                 <div>
                     <style>
                         table {
@@ -132,7 +135,7 @@
                             <th>Action</th>
                         </thead>
                         <tbody>
-                            <tr #contactUs>
+                            <tr >
                                 <td>1</td>
                                 <td>Java Developer</td>
                                 <td>Graduate</td>
@@ -167,10 +170,10 @@
 
             </div>
         </section>
-        <h1 style=" margin-top: 50px ; text-align: center;">Contact Us</h1>
+        <h1  style=" margin-top: 50px ; text-align: center;">Contact Us</h1>
         <div>
             <span style="float: left; margin: 10px; ">
-                <div class="span 4" style="text-align: center;  "><br> <br> <img
+                <div #contactUs class="span 4" style="text-align: center;  "><br> <br> <img
                         src="https://6109acb91c67b7de3e26-67c7b388f4b4796c3b826f326111f63e.ssl.cf1.rackcdn.com/1571918671524Locationicon.png"
                         style="width: 35px; height: 35px;"></div>
                 <div style="text-align: center;"><span style="font-size:22px;">Address</span><br> 18, Institutional
@@ -184,7 +187,7 @@
             </span> <span style="float: right ; margin-right: 10px;">
                 <div style="padding:20px;">
                     <h3 class="contact-title"> Get In Touch </h3>
-                    <div  class="vm-form-control">
+                    <div class="vm-form-control">
                         <p class="contact-name"> <input style="height: 39px;width: 300px;" type="text"
                                 placeholder="Name" value="" name="name" required=""> </p>
                         <p class="contact-email"> <input style="height: 39px;width: 300px;" type="text"
@@ -194,14 +197,14 @@
                         <p class="contact-message"> <textarea id="customerMessage" placeholder="Message" name="message"
                                 rows="4" cols="40" required=""></textarea> </p>
                     </div>
-                    <div #ourTech  class="contact-submit">
+                    <div  class="contact-submit">
                         <div class="button-align" style="text-align:left;; "> <input
                                 style=" background-color: #24aee4;border: none;color: white;padding: 16px 32px; margin: 4px 2px;cursor: pointer;"
                                 class="btn viamagus-button-default viamagus-button-" type="submit" value="Send"> </div>
                     </div>
                 </div>
             </span>
-            
+
         </div>
 
 
@@ -209,10 +212,10 @@
     </section>
     <div class="container" style="background-image: url(../assets/images/loacl.png); width: 90%;  ">
         <h1  style="margin-left: 39%; color: white; margin-top: 20px; "> Our Tech. </h1>
-        <p style="color: white ; margin-left: 10%;margin-top: 30px;">Our products and services help our customers
+        <p #ourTech style="color: white ; margin-left: 10%;margin-top: 30px;">Our products and services help our customers
             consistently deliver their best. We are renowned for our excellent success rate</p>
 
-        <div class="row">
+        <div  class="row">
             <div style="margin-left: 60px;" class="col-sm-3">
 
                 <div>
@@ -284,7 +287,7 @@
                             class="img-circle img-responsive why-section "
                             style="height:50px;margin-left:7%; margin-top: 30px ; display:block;">
                     </div>
-                    <div #ourTeam class="columngrid-desc fixedImgAlignmnetFixed ">
+                    <div  class="columngrid-desc fixedImgAlignmnetFixed ">
                         <div>
                             <h2 class="viamagus-heading2">
                                 <div style="margin-left: 10px; font-size: 23px; "><span style="color:#FFFFFF;">SAP
@@ -311,11 +314,11 @@
 
 
     <div>
-        <h1 style="text-align: center;">Our Team</h1>
+        <h1  style=" margin-top: 50px; text-align: center;">Our Team</h1>
 
 
 
-        <div class="col-md-12">
+        <div #ourTeam class="col-md-12">
             <section class="panel">
                 <div class="panel-body profile-information">
                     <div class="col-md-3">
@@ -420,7 +423,7 @@
                 <div class="panel-body profile-information">
                     <div class="col-md-3">
                         <div class="profile-pic text-center">
-                            <img src="./assets/images/" alt="">
+                            <img src="./assets/images/avatar-mini.jpg" alt="">
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -474,8 +477,8 @@
                     </div>
                     <div class="col-md-6">
                         <div class="profile-desk">
-                            <h1>Meenakshi</h1>
-                            <span class="text-muted"> Trainee Software Developer</span>
+                            <!-- <h1>Meenakshi</h1> -->
+                            <span class="text-muted"> Full stack Developer</span>
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean porttitor vestibulum
                                 imperdiet. Ut auctor accumsan erat, a vulputate metus tristique non. Aliquam aliquam vel

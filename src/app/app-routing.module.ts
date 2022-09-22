@@ -11,6 +11,7 @@ import { HiringComponent } from './core-element/hiring/hiring.component';
 import { DocumentComponent } from './core-element/myinfo/document/document.component';
 import { EmployeeprofileModalComponent } from './employeeprofile-modal/employeeprofile-modal.component';
 import { AttendenceReportComponent } from './attendence-report/attendence-report.component';
+import { PersonalComponent } from './core-element/myinfo/personal/personal.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -21,9 +22,15 @@ const routes: Routes = [
   { path: 'people', component: PeopleComponent },
   {
     path: 'MyInfo',
+    component: MyInfoComponent,
     children: [
-      { path : '', pathMatch:'full', component: MyInfoComponent},
-      { path: 'document', component: DocumentComponent },
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'personal'
+    },
+      { path: 'personal', component: PersonalComponent },
+      { path: 'document', component: DocumentComponent }
     ]
   },
   { path: 'hiring', component: HiringComponent },

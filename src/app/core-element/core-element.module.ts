@@ -15,6 +15,7 @@ import { LoginModule } from '../login/login.module';
 import { EmployeeprofileModalComponent } from '../employeeprofile-modal/employeeprofile-modal.component';
 import {  FormsModule } from '@angular/forms';
 import { DocumentComponent } from './myinfo/document/document.component';
+import { PersonalComponent } from './myinfo/personal/personal.component';
 
 
 
@@ -27,7 +28,8 @@ import { DocumentComponent } from './myinfo/document/document.component';
     MyInfoComponent,
     HiringComponent,
     EmployeeprofileModalComponent,
-    DocumentComponent
+    DocumentComponent,
+    PersonalComponent
 
   ],
   imports: [
@@ -45,7 +47,7 @@ import { DocumentComponent } from './myinfo/document/document.component';
     MyInfoComponent,
     HiringComponent,
     EmployeeprofileModalComponent,
-    
+    PersonalComponent
   ],
 
 
