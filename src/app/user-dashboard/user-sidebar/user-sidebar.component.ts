@@ -10,16 +10,17 @@ import { getLocaleDateFormat } from '@angular/common';
 export class UserSidebarComponent implements OnInit {
 
   empId!: any;
-  empName: string = "";
+  empName !: any;
    punch:punchIn = new punchIn();
   constructor( public auth: AuthenticationService ) {  }
 
   ngOnInit(): void  {
     this.empId =this.auth.getData(this.auth.TOKEN_KEY);
-    this.empName = this.punch.empName
-   console.log( this.punch.empName + this.empId)
+     this.empName= this.punch.empId
+   console.log( "empname" + this.empName + "empid" + this.empId)
   }
   getData(){
+
     
   }
 }

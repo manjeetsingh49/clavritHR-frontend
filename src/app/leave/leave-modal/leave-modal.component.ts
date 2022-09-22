@@ -21,6 +21,7 @@ export class LeaveModalComponent implements OnInit {
     {"value":"sickLeave", "display" : "Sick Leave"},
     {"value":"vacation", "display" : "Vacation"},
     {"value":"covid", "display" : "Covid"},
+    {"value":"other", "display" : "Other"},
   ]
   public selectLeaveType: string = "Leave type"
   todate: any;

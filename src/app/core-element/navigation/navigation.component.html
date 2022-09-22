@@ -19,10 +19,10 @@
 
           <li  *ngIf="this.authService.isLogin"><a class="btn" routerLink="user-dashboard" routerLinkActive="active">Home</a></li>
           <li *ngIf="this.authService.isLogin"><a class="btn" routerLink="about" routerLinkActive="active">Our Company</a></li>
-          <li *ngIf="this.authService.isLogin"><a mat-button routerLink="people" routerLinkActive="active">People</a></li>
-          <li *ngIf="this.authService.isLogin" ><a mat-button routerLink="MyInfo" routerLinkActive="active">My Info</a></li>
-          <li *ngIf="this.authService.isLogin"><a mat-button routerLink="hiring" routerLinkActive="active">Hiring</a></li> 
-          <li *ngIf="this.authService.isLogin"><a mat-button routerLink="attendence-report" routerLinkActive="active">Report</a></li>
+          <li *ngIf="this.authService.isLogin"><a class="btn" mat-button routerLink="people" routerLinkActive="active">People</a></li>
+          <li *ngIf="this.authService.isLogin" ><a class="btn" mat-button routerLink="MyInfo" routerLinkActive="active">My Info</a></li>
+          <li *ngIf="this.authService.isLogin"><a class="btn" mat-button routerLink="hiring" routerLinkActive="active">Hiring</a></li> 
+          <li *ngIf="this.authService.isLogin"><a class="btn" mat-button routerLink="attendence-report" routerLinkActive="active">Report</a></li>
          
       </ul>
       <!--  notification end -->
