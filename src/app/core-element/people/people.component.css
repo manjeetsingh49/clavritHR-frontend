@@ -7,10 +7,16 @@ table.table td a.add {
     color: #24aee4;
 }
 table.table td a.edit {
-    color: black;
+    color: green;
+    margin: 5px;
 }
 table.table td a.delete {
-    color:  black;
+    color:  red;
+    margin: 5px;
+}
+table.table td a.view {
+    color: #24aee4;
+    margin: 5px;
 }
 .table-title .btn-group {
 	float: right;

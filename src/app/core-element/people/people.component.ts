@@ -32,8 +32,14 @@ export class PeopleComponent implements OnInit {
     }
     );
   }
-  openDetails() {
-    alert("sachin")
+  openDetails(empId:string|undefined) {
+    if (!empId) {
+      alert("Invalid emp");
+      return;
+    }
+    this.peopleData.viewEmployee(empId).subscribe(data2=>{
+      console.log(data2);
+    })
   }
   deletePeople(empId:string|undefined) {
     if (!empId) {
@@ -45,6 +51,15 @@ export class PeopleComponent implements OnInit {
         this.getPeople();
       })
       
+    }
+    updateDetails(empId:string|undefined){
+      if (!empId) {
+        alert("Invalid emp");
+        return;
+      }
+     this.peopleData.updateEmployee(empId).subscribe(data=>{
+    console.log(data);
+})
     }
   }
 function http<T>(http: any) {
