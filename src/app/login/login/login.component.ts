@@ -5,6 +5,7 @@ import { LoginService } from 'src/app/service/login.service';
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/service/authentication.service';
 import { LoginClass } from 'src/app/class/login.class';
+import { EmployeeMaster } from 'src/app/class/EmployeeMaster';
 
 
 
@@ -17,6 +18,7 @@ import { LoginClass } from 'src/app/class/login.class';
 export class LoginComponent implements OnInit {
   response: any;
   msg: string = "";
+  empMaster : EmployeeMaster = new EmployeeMaster();
 
   constructor(private loginService: LoginService, private route: Router, private authService: AuthenticationService) { }
 
@@ -38,6 +40,9 @@ export class LoginComponent implements OnInit {
       console.log("code : " + code)
       if (code == 200) {
         this.authService.saveData(id, password);
+        this.empMaster = resp.data;
+        this.authService.saveEmpMaster(this.empMaster);
+        console.log("empMaster data :: " + this.authService.getEmpMaster().role);
         this.route.navigate(["/user-dashboard"]);
       } else {
         this.msg = "Invalid credentials, Please enter correct";

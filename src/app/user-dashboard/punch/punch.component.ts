@@ -4,6 +4,7 @@ import {punchIn } from 'src/app/class/punchIn.class';
 import { AuthenticationService } from 'src/app/service/authentication.service';
 import { LeaveService } from 'src/app/service/leave.service';
 import { PunchService } from 'src/app/service/punch.service';
+import { RoleService } from 'src/app/service/role.service';
 
 
 @Component({
@@ -15,7 +16,7 @@ export class PunchComponent implements OnInit {
   authService: any;
 
 
-  constructor(private punchService: PunchService ,private AuthenticationService: AuthenticationService, private leaveService: LeaveService) {
+  constructor(private punchService: PunchService ,private AuthenticationService: AuthenticationService, private leaveService: LeaveService, public roleService: RoleService) {
   }
 
   punchInTime: any;

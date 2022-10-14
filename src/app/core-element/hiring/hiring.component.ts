@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { EmployeeMaster } from 'src/app/class/EmployeeMaster';
+import { RoleService } from 'src/app/service/role.service';
 export class Hiring {
   constructor(
     public candidate_info: String,
@@ -14,8 +16,9 @@ export class Hiring {
   styleUrls: ['./hiring.component.css'],
 })
 export class HiringComponent implements OnInit {
+ 
   hirings: Hiring[] = [];
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient, public roleService:RoleService ) {}
 
   ngOnInit(): void {
     this.gethiring();
