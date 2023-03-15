@@ -1,8 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { EmployeeMaster } from 'src/app/class/EmployeeMaster';
 import { EmployeeProfileDto } from 'src/app/employeeprofile-modal/models/employe-profile-entity';
+import { AuthenticationService } from 'src/app/service/authentication.service';
 import { GlobalService } from 'src/app/service/global.service';
 import { PeopleService } from 'src/app/service/people.service';
+import { RoleService } from 'src/app/service/role.service';
 
 @Component({
   selector: 'app-people',
@@ -11,17 +14,21 @@ import { PeopleService } from 'src/app/service/people.service';
   providers: [GlobalService]
 })
 export class PeopleComponent implements OnInit {
-
+   empmaster: EmployeeMaster = new EmployeeMaster();
   authService: any;
   eMasterDetails: any;
   public empProfiles: EmployeeProfileDto[] = [];
+  isAdmin:boolean = false;
   constructor(
     private httpClient: HttpClient, public globalService: GlobalService,
-    private peopleData:PeopleService,
-  ) { }
+    private peopleData:PeopleService, public roleService : RoleService, public auth: AuthenticationService
+  ) { 
+    this.roleService.isAdmin();
+  }
 
   ngOnInit(): void {
     this.getPeople();
+    this.isAdmin = this.roleService.isAdmin();
   }
   getPeople() {
     this.peopleData.getEmployee().subscribe((resp)=>{
