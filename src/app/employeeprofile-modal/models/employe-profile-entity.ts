@@ -34,9 +34,9 @@ export class EmployeeMasterDetails {
 }
 
 export class EmployeeProfileDto {
-    empPersonalDetails:EmployeePersonalDetail;
-	empHrmsDetails:EmployeeHrmsDetail;
-	empMasterDetails:EmployeeMasterDetails;
+   public empPersonalDetails:EmployeePersonalDetail;
+	public empHrmsDetails:EmployeeHrmsDetail;
+	public empMasterDetails:EmployeeMasterDetails;
 
     constructor(empPersonalDetails:EmployeePersonalDetail, empHrmsDetails:EmployeeHrmsDetail, empMasterDetails:EmployeeMasterDetails) {
         this.empHrmsDetails = empHrmsDetails;
